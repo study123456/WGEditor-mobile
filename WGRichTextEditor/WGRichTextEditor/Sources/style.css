@@ -1,0 +1,57 @@
+/**
+ * Copyright (C) 2017 Wasabeef
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@charset "UTF-8";
+
+
+html {
+  height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+  table-layout: fixed;
+  width: 100%;
+  height:100%;
+}
+
+#editor {
+    display: block;
+  outline: 0px solid transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+    height:-moz-calc(100% - 170px); 
+	height:-webkit-calc(100% - 170px); 
+	height:calc(100% - 170px);
+    content: " ";
+    margin: 0 30px;
+    padding: 20px 0;
+}
+
+#editor[placeholder]:empty:not(:focus):before {
+  content: attr(placeholder);
+  opacity: .5;
+}}
+
+
+/* 遗留问题
+ 1、 获取字体结束标签 判断改变按钮状态
+ 2、 插入超链接 内容未添加 alt ---
+ 3、 首次进入webview未能唤醒键盘、导致无焦点上传图片失败
+ 4、 修改字体为默认大小、字体间隙H1\H2等有问题
+ 5、 获取选中的内容的标签 及 改变标签
+ */
