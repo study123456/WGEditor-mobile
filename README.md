@@ -1,4 +1,7 @@
 # WGEditor-mobile
+- 采用webview加载一个本地html文件,该html内部编写好js方法用于与oc相互调用,从而达到编辑器功能的效果
+
+- 常用函数
 - (NSString *)titleText;
 
 - (void)setupTitle:(NSString *)title;
