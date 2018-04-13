@@ -442,7 +442,7 @@
  
     if (photoList.count > 0) {
         for (HXPhotoModel *photoM in photoList) {
-            [self.webView insertImageUrl:photoM.thumbPhoto alt:nil];
+            [self.webView inserImage:photoM.thumbPhoto alt:nil];
         }
         
     }
