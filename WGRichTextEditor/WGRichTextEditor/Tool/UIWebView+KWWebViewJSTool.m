@@ -244,4 +244,13 @@
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
 
+- (void)inserImage:(UIImage *)image alt:(NSString *)alt{
+    NSData *scaledImageData = UIImageJPEGRepresentation(image, 0.8);
+    NSString *imageBase64String = [scaledImageData base64EncodedStringWithOptions:0];
+    
+    NSString *trigger = [NSString stringWithFormat:@"RE.editor.insertImageBase64String(\"%@\", \"%@\");", imageBase64String, alt];
+    
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+    
+}
 @end

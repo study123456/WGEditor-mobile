@@ -442,12 +442,7 @@
  
     if (photoList.count > 0) {
         for (HXPhotoModel *photoM in photoList) {
-        NSData *scaledImageData = UIImageJPEGRepresentation(photoM.thumbPhoto, 0.8);
-        NSString *imageBase64String = [scaledImageData base64EncodedStringWithOptions:0];
-        
-        NSString *trigger = [NSString stringWithFormat:@"RE.editor.insertImageBase64String(\"%@\", \"%@\");", imageBase64String, nil];
-        [self.webView stringByEvaluatingJavaScriptFromString:trigger];
-            
+            [self.webView insertImageUrl:photoM.thumbPhoto alt:nil];
         }
         
     }

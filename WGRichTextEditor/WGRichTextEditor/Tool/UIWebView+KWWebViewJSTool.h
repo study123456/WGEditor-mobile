@@ -72,5 +72,6 @@
 - (void)getCaretYPosition;
 
 - (void)setFontSize:(NSString *)size;
-
+//插入图片
+- (void)inserImage:(UIImage *)image alt:(NSString *)alt;
 @end
