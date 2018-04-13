@@ -560,6 +560,8 @@ blockquote{
     margin:0!important;
     text-indent:32px;
     line-height:28px;
+    text-indent:2em;/*modify*/
+    margin:9px;
 }
 blockquote:before {
 /*    margin:0!important;*/

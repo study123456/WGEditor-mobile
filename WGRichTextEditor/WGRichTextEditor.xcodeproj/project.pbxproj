@@ -25,6 +25,63 @@
 		CB4C7120205FB1A20046A62A /* UIWebView+KWHideAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4C711E205FB1A20046A62A /* UIWebView+KWHideAccessoryView.m */; };
 		CB4C7121205FB1A20046A62A /* UIWebView+KWWebViewJSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4C711F205FB1A20046A62A /* UIWebView+KWWebViewJSTool.m */; };
 		CB4C7125205FB48F0046A62A /* UIControl+KWButtonExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4C7123205FB48F0046A62A /* UIControl+KWButtonExtension.m */; };
+		CBE1925120809DE900215299 /* HXCustomCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1920420809DE900215299 /* HXCustomCameraViewController.m */; };
+		CBE1925220809DE900215299 /* UIViewController+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1920520809DE900215299 /* UIViewController+HXExtension.m */; };
+		CBE1925320809DE900215299 /* HXPhotoConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1920620809DE900215299 /* HXPhotoConfiguration.m */; };
+		CBE1925420809DE900215299 /* HXDownloadProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1920720809DE900215299 /* HXDownloadProgressView.m */; };
+		CBE1925520809DE900215299 /* HXPhoto3DTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1920A20809DE900215299 /* HXPhoto3DTouchViewController.m */; };
+		CBE1925620809DE900215299 /* HXDatePhotoPreviewBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1920B20809DE900215299 /* HXDatePhotoPreviewBottomView.m */; };
+		CBE1925720809DE900215299 /* NSBundle+HXWeiboPhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921020809DE900215299 /* NSBundle+HXWeiboPhotoPicker.m */; };
+		CBE1925820809DE900215299 /* HXCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921220809DE900215299 /* HXCollectionView.m */; };
+		CBE1925920809DE900215299 /* UIImageView+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921420809DE900215299 /* UIImageView+HXExtension.m */; };
+		CBE1925A20809DE900215299 /* UIFont+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921520809DE900215299 /* UIFont+HXExtension.m */; };
+		CBE1925B20809DE900215299 /* HXDatePhotoInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921720809DE900215299 /* HXDatePhotoInteractiveTransition.m */; };
+		CBE1925C20809DE900215299 /* HXPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921820809DE900215299 /* HXPhotoModel.m */; };
+		CBE1925D20809DE900215299 /* HXAlbumListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921920809DE900215299 /* HXAlbumListViewController.m */; };
+		CBE1925E20809DE900215299 /* UIView+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921C20809DE900215299 /* UIView+HXExtension.m */; };
+		CBE1925F20809DE900215299 /* HXPhotoCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921D20809DE900215299 /* HXPhotoCustomNavigationBar.m */; };
+		CBE1926020809DE900215299 /* HXPhotoTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1921F20809DE900215299 /* HXPhotoTools.m */; };
+		CBE1926120809DE900215299 /* HXDatePhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1922120809DE900215299 /* HXDatePhotoPreviewViewController.m */; };
+		CBE1926220809DE900215299 /* HXDatePhotoViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1922220809DE900215299 /* HXDatePhotoViewFlowLayout.m */; };
+		CBE1926320809DE900215299 /* HXDatePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1922320809DE900215299 /* HXDatePhotoViewController.m */; };
+		CBE1926420809DE900215299 /* HXPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1922620809DE900215299 /* HXPhotoManager.m */; };
+		CBE1926520809DE900215299 /* HXDatePhotoViewPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1922720809DE900215299 /* HXDatePhotoViewPresentTransition.m */; };
+		CBE1926620809DE900215299 /* HXCustomCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1922A20809DE900215299 /* HXCustomCameraController.m */; };
+		CBE1926720809DE900215299 /* UIImage+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923020809DE900215299 /* UIImage+HXExtension.m */; };
+		CBE1926820809DE900215299 /* HXCustomCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923120809DE900215299 /* HXCustomCollectionReusableView.m */; };
+		CBE1926920809DE900215299 /* HXWeiboPhotoPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBE1923220809DE900215299 /* HXWeiboPhotoPicker.bundle */; };
+		CBE1926A20809DE900215299 /* HXPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923520809DE900215299 /* HXPhotoView.m */; };
+		CBE1926B20809DE900215299 /* HXFullScreenCameraPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923620809DE900215299 /* HXFullScreenCameraPlayView.m */; };
+		CBE1926C20809DE900215299 /* NSDate+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923720809DE900215299 /* NSDate+HXExtension.m */; };
+		CBE1926D20809DE900215299 /* HXCustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923820809DE900215299 /* HXCustomNavigationController.m */; };
+		CBE1926E20809DE900215299 /* HXDatePhotoViewTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923920809DE900215299 /* HXDatePhotoViewTransition.m */; };
+		CBE1926F20809DE900215299 /* HXPhotoSubViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923D20809DE900215299 /* HXPhotoSubViewCell.m */; };
+		CBE1927020809DE900215299 /* HXAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1923F20809DE900215299 /* HXAlbumModel.m */; };
+		CBE1927120809DE900215299 /* UIButton+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1924220809DE900215299 /* UIButton+HXExtension.m */; };
+		CBE1927220809DE900215299 /* HXCustomPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1924320809DE900215299 /* HXCustomPreviewView.m */; };
+		CBE1927320809DE900215299 /* HXCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1924520809DE900215299 /* HXCircleProgressView.m */; };
+		CBE1927420809DE900215299 /* HXDateVideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1924A20809DE900215299 /* HXDateVideoEditViewController.m */; };
+		CBE1927520809DE900215299 /* HXDatePhotoToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1924D20809DE900215299 /* HXDatePhotoToolManager.m */; };
+		CBE1927620809DE900215299 /* HXDatePhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1924E20809DE900215299 /* HXDatePhotoEditViewController.m */; };
+		CBE1929F2080A13E00215299 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192782080A13E00215299 /* UIImage+WebP.m */; };
+		CBE192A02080A13E00215299 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192792080A13E00215299 /* MKAnnotationView+WebCache.m */; };
+		CBE192A12080A13E00215299 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1927D2080A13E00215299 /* SDWebImageManager.m */; };
+		CBE192A22080A13E00215299 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1927E2080A13E00215299 /* SDWebImageDecoder.m */; };
+		CBE192A32080A13E00215299 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192802080A13E00215299 /* UIImageView+HighlightedWebCache.m */; };
+		CBE192A42080A13E00215299 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192832080A13E00215299 /* SDWebImageDownloader.m */; };
+		CBE192A52080A13E00215299 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192842080A13E00215299 /* UIImage+GIF.m */; };
+		CBE192A62080A13E00215299 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192862080A13E00215299 /* UIImage+MultiFormat.m */; };
+		CBE192A72080A13E00215299 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192872080A13E00215299 /* SDWebImageCompat.m */; };
+		CBE192A82080A13E00215299 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192882080A13E00215299 /* SDWebImagePrefetcher.m */; };
+		CBE192A92080A13E00215299 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1928D2080A13E00215299 /* SDImageCache.m */; };
+		CBE192AA2080A13E00215299 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1928F2080A13E00215299 /* SDWebImageDownloaderOperation.m */; };
+		CBE192AB2080A13E00215299 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192922080A13E00215299 /* NSData+ImageContentType.m */; };
+		CBE192AC2080A13E00215299 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192932080A13E00215299 /* UIImageView+WebCache.m */; };
+		CBE192AD2080A13E00215299 /* NSImage+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192952080A13E00215299 /* NSImage+WebCache.m */; };
+		CBE192AE2080A13E00215299 /* SDImageCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192972080A13E00215299 /* SDImageCacheConfig.m */; };
+		CBE192AF2080A13E00215299 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192982080A13E00215299 /* UIView+WebCacheOperation.m */; };
+		CBE192B02080A13E00215299 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192992080A13E00215299 /* UIView+WebCache.m */; };
+		CBE192B12080A13E00215299 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1929D2080A13E00215299 /* UIButton+WebCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +134,122 @@
 		CB4C7122205FB2100046A62A /* WGCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGCommon.h; sourceTree = "<group>"; };
 		CB4C7123205FB48F0046A62A /* UIControl+KWButtonExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+KWButtonExtension.m"; sourceTree = "<group>"; };
 		CB4C7124205FB48F0046A62A /* UIControl+KWButtonExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+KWButtonExtension.h"; sourceTree = "<group>"; };
+		CBE1920420809DE900215299 /* HXCustomCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCustomCameraViewController.m; sourceTree = "<group>"; };
+		CBE1920520809DE900215299 /* UIViewController+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HXExtension.m"; sourceTree = "<group>"; };
+		CBE1920620809DE900215299 /* HXPhotoConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoConfiguration.m; sourceTree = "<group>"; };
+		CBE1920720809DE900215299 /* HXDownloadProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDownloadProgressView.m; sourceTree = "<group>"; };
+		CBE1920820809DE900215299 /* HXCustomCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCustomCameraController.h; sourceTree = "<group>"; };
+		CBE1920920809DE900215299 /* HXDatePhotoViewTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoViewTransition.h; sourceTree = "<group>"; };
+		CBE1920A20809DE900215299 /* HXPhoto3DTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhoto3DTouchViewController.m; sourceTree = "<group>"; };
+		CBE1920B20809DE900215299 /* HXDatePhotoPreviewBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoPreviewBottomView.m; sourceTree = "<group>"; };
+		CBE1920C20809DE900215299 /* HXCustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCustomNavigationController.h; sourceTree = "<group>"; };
+		CBE1920D20809DE900215299 /* NSDate+HXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HXExtension.h"; sourceTree = "<group>"; };
+		CBE1920E20809DE900215299 /* HXPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoView.h; sourceTree = "<group>"; };
+		CBE1920F20809DE900215299 /* HXFullScreenCameraPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXFullScreenCameraPlayView.h; sourceTree = "<group>"; };
+		CBE1921020809DE900215299 /* NSBundle+HXWeiboPhotoPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+HXWeiboPhotoPicker.m"; sourceTree = "<group>"; };
+		CBE1921120809DE900215299 /* HXCustomCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCustomCollectionReusableView.h; sourceTree = "<group>"; };
+		CBE1921220809DE900215299 /* HXCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCollectionView.m; sourceTree = "<group>"; };
+		CBE1921320809DE900215299 /* UIImage+HXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HXExtension.h"; sourceTree = "<group>"; };
+		CBE1921420809DE900215299 /* UIImageView+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HXExtension.m"; sourceTree = "<group>"; };
+		CBE1921520809DE900215299 /* UIFont+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+HXExtension.m"; sourceTree = "<group>"; };
+		CBE1921620809DE900215299 /* HXCircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCircleProgressView.h; sourceTree = "<group>"; };
+		CBE1921720809DE900215299 /* HXDatePhotoInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoInteractiveTransition.m; sourceTree = "<group>"; };
+		CBE1921820809DE900215299 /* HXPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoModel.m; sourceTree = "<group>"; };
+		CBE1921920809DE900215299 /* HXAlbumListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXAlbumListViewController.m; sourceTree = "<group>"; };
+		CBE1921A20809DE900215299 /* UIButton+HXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HXExtension.h"; sourceTree = "<group>"; };
+		CBE1921B20809DE900215299 /* HXCustomPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCustomPreviewView.h; sourceTree = "<group>"; };
+		CBE1921C20809DE900215299 /* UIView+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HXExtension.m"; sourceTree = "<group>"; };
+		CBE1921D20809DE900215299 /* HXPhotoCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoCustomNavigationBar.m; sourceTree = "<group>"; };
+		CBE1921E20809DE900215299 /* HXAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXAlbumModel.h; sourceTree = "<group>"; };
+		CBE1921F20809DE900215299 /* HXPhotoTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoTools.m; sourceTree = "<group>"; };
+		CBE1922020809DE900215299 /* HXPhotoSubViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoSubViewCell.h; sourceTree = "<group>"; };
+		CBE1922120809DE900215299 /* HXDatePhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoPreviewViewController.m; sourceTree = "<group>"; };
+		CBE1922220809DE900215299 /* HXDatePhotoViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoViewFlowLayout.m; sourceTree = "<group>"; };
+		CBE1922320809DE900215299 /* HXDatePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoViewController.m; sourceTree = "<group>"; };
+		CBE1922420809DE900215299 /* HXDatePhotoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoEditViewController.h; sourceTree = "<group>"; };
+		CBE1922520809DE900215299 /* HXDatePhotoToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoToolManager.h; sourceTree = "<group>"; };
+		CBE1922620809DE900215299 /* HXPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoManager.m; sourceTree = "<group>"; };
+		CBE1922720809DE900215299 /* HXDatePhotoViewPresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoViewPresentTransition.m; sourceTree = "<group>"; };
+		CBE1922820809DE900215299 /* HXDateVideoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDateVideoEditViewController.h; sourceTree = "<group>"; };
+		CBE1922920809DE900215299 /* HXPhotoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoDefine.h; sourceTree = "<group>"; };
+		CBE1922A20809DE900215299 /* HXCustomCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCustomCameraController.m; sourceTree = "<group>"; };
+		CBE1922B20809DE900215299 /* HXDownloadProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDownloadProgressView.h; sourceTree = "<group>"; };
+		CBE1922C20809DE900215299 /* HXPhotoConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoConfiguration.h; sourceTree = "<group>"; };
+		CBE1922D20809DE900215299 /* UIViewController+HXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HXExtension.h"; sourceTree = "<group>"; };
+		CBE1922E20809DE900215299 /* HXCustomCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCustomCameraViewController.h; sourceTree = "<group>"; };
+		CBE1922F20809DE900215299 /* HXCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCollectionView.h; sourceTree = "<group>"; };
+		CBE1923020809DE900215299 /* UIImage+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HXExtension.m"; sourceTree = "<group>"; };
+		CBE1923120809DE900215299 /* HXCustomCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCustomCollectionReusableView.m; sourceTree = "<group>"; };
+		CBE1923220809DE900215299 /* HXWeiboPhotoPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HXWeiboPhotoPicker.bundle; sourceTree = "<group>"; };
+		CBE1923320809DE900215299 /* NSBundle+HXWeiboPhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+HXWeiboPhotoPicker.h"; sourceTree = "<group>"; };
+		CBE1923420809DE900215299 /* HXPhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoPicker.h; sourceTree = "<group>"; };
+		CBE1923520809DE900215299 /* HXPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoView.m; sourceTree = "<group>"; };
+		CBE1923620809DE900215299 /* HXFullScreenCameraPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXFullScreenCameraPlayView.m; sourceTree = "<group>"; };
+		CBE1923720809DE900215299 /* NSDate+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HXExtension.m"; sourceTree = "<group>"; };
+		CBE1923820809DE900215299 /* HXCustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCustomNavigationController.m; sourceTree = "<group>"; };
+		CBE1923920809DE900215299 /* HXDatePhotoViewTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoViewTransition.m; sourceTree = "<group>"; };
+		CBE1923A20809DE900215299 /* HXDatePhotoPreviewBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoPreviewBottomView.h; sourceTree = "<group>"; };
+		CBE1923B20809DE900215299 /* HXPhoto3DTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhoto3DTouchViewController.h; sourceTree = "<group>"; };
+		CBE1923C20809DE900215299 /* HXDatePhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoPreviewViewController.h; sourceTree = "<group>"; };
+		CBE1923D20809DE900215299 /* HXPhotoSubViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoSubViewCell.m; sourceTree = "<group>"; };
+		CBE1923E20809DE900215299 /* HXPhotoTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoTools.h; sourceTree = "<group>"; };
+		CBE1923F20809DE900215299 /* HXAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXAlbumModel.m; sourceTree = "<group>"; };
+		CBE1924020809DE900215299 /* UIView+HXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HXExtension.h"; sourceTree = "<group>"; };
+		CBE1924120809DE900215299 /* HXPhotoCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoCustomNavigationBar.h; sourceTree = "<group>"; };
+		CBE1924220809DE900215299 /* UIButton+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HXExtension.m"; sourceTree = "<group>"; };
+		CBE1924320809DE900215299 /* HXCustomPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCustomPreviewView.m; sourceTree = "<group>"; };
+		CBE1924420809DE900215299 /* HXAlbumListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXAlbumListViewController.h; sourceTree = "<group>"; };
+		CBE1924520809DE900215299 /* HXCircleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCircleProgressView.m; sourceTree = "<group>"; };
+		CBE1924620809DE900215299 /* UIFont+HXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+HXExtension.h"; sourceTree = "<group>"; };
+		CBE1924720809DE900215299 /* HXPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoModel.h; sourceTree = "<group>"; };
+		CBE1924820809DE900215299 /* HXDatePhotoInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoInteractiveTransition.h; sourceTree = "<group>"; };
+		CBE1924920809DE900215299 /* UIImageView+HXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HXExtension.h"; sourceTree = "<group>"; };
+		CBE1924A20809DE900215299 /* HXDateVideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDateVideoEditViewController.m; sourceTree = "<group>"; };
+		CBE1924B20809DE900215299 /* HXPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoManager.h; sourceTree = "<group>"; };
+		CBE1924C20809DE900215299 /* HXDatePhotoViewPresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoViewPresentTransition.h; sourceTree = "<group>"; };
+		CBE1924D20809DE900215299 /* HXDatePhotoToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoToolManager.m; sourceTree = "<group>"; };
+		CBE1924E20809DE900215299 /* HXDatePhotoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXDatePhotoEditViewController.m; sourceTree = "<group>"; };
+		CBE1924F20809DE900215299 /* HXDatePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoViewController.h; sourceTree = "<group>"; };
+		CBE1925020809DE900215299 /* HXDatePhotoViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDatePhotoViewFlowLayout.h; sourceTree = "<group>"; };
+		CBE192782080A13E00215299 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
+		CBE192792080A13E00215299 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
+		CBE1927A2080A13E00215299 /* NSImage+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+WebCache.h"; sourceTree = "<group>"; };
+		CBE1927B2080A13E00215299 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		CBE1927C2080A13E00215299 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		CBE1927D2080A13E00215299 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		CBE1927E2080A13E00215299 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		CBE1927F2080A13E00215299 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		CBE192802080A13E00215299 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		CBE192812080A13E00215299 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		CBE192822080A13E00215299 /* SDImageCacheConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCacheConfig.h; sourceTree = "<group>"; };
+		CBE192832080A13E00215299 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		CBE192842080A13E00215299 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		CBE192852080A13E00215299 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		CBE192862080A13E00215299 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		CBE192872080A13E00215299 /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		CBE192882080A13E00215299 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		CBE192892080A13E00215299 /* UIView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCache.h"; sourceTree = "<group>"; };
+		CBE1928A2080A13E00215299 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		CBE1928B2080A13E00215299 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
+		CBE1928C2080A13E00215299 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
+		CBE1928D2080A13E00215299 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		CBE1928E2080A13E00215299 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		CBE1928F2080A13E00215299 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		CBE192902080A13E00215299 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		CBE192912080A13E00215299 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		CBE192922080A13E00215299 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		CBE192932080A13E00215299 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		CBE192942080A13E00215299 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		CBE192952080A13E00215299 /* NSImage+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+WebCache.m"; sourceTree = "<group>"; };
+		CBE192962080A13E00215299 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		CBE192972080A13E00215299 /* SDImageCacheConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCacheConfig.m; sourceTree = "<group>"; };
+		CBE192982080A13E00215299 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		CBE192992080A13E00215299 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
+		CBE1929A2080A13E00215299 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		CBE1929B2080A13E00215299 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		CBE1929C2080A13E00215299 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		CBE1929D2080A13E00215299 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		CBE1929E2080A13E00215299 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +300,8 @@
 		CB4C70D6205FAFE40046A62A /* WGRichTextEditor */ = {
 			isa = PBXGroup;
 			children = (
+				CBE192772080A13E00215299 /* SDWebImage */,
+				CBE1920320809DE900215299 /* HXWeiboPhotoPicker */,
 				CB4C7113205FB1550046A62A /* View */,
 				CB4C710A205FB0480046A62A /* Tool */,
 				CB4C7109205FB02D0046A62A /* Sources */,
@@ -196,6 +371,136 @@
 				CB4C7114205FB1990046A62A /* KWFontStyleBar.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CBE1920320809DE900215299 /* HXWeiboPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CBE1920420809DE900215299 /* HXCustomCameraViewController.m */,
+				CBE1920520809DE900215299 /* UIViewController+HXExtension.m */,
+				CBE1920620809DE900215299 /* HXPhotoConfiguration.m */,
+				CBE1920720809DE900215299 /* HXDownloadProgressView.m */,
+				CBE1920820809DE900215299 /* HXCustomCameraController.h */,
+				CBE1920920809DE900215299 /* HXDatePhotoViewTransition.h */,
+				CBE1920A20809DE900215299 /* HXPhoto3DTouchViewController.m */,
+				CBE1920B20809DE900215299 /* HXDatePhotoPreviewBottomView.m */,
+				CBE1920C20809DE900215299 /* HXCustomNavigationController.h */,
+				CBE1920D20809DE900215299 /* NSDate+HXExtension.h */,
+				CBE1920E20809DE900215299 /* HXPhotoView.h */,
+				CBE1920F20809DE900215299 /* HXFullScreenCameraPlayView.h */,
+				CBE1921020809DE900215299 /* NSBundle+HXWeiboPhotoPicker.m */,
+				CBE1921120809DE900215299 /* HXCustomCollectionReusableView.h */,
+				CBE1921220809DE900215299 /* HXCollectionView.m */,
+				CBE1921320809DE900215299 /* UIImage+HXExtension.h */,
+				CBE1921420809DE900215299 /* UIImageView+HXExtension.m */,
+				CBE1921520809DE900215299 /* UIFont+HXExtension.m */,
+				CBE1921620809DE900215299 /* HXCircleProgressView.h */,
+				CBE1921720809DE900215299 /* HXDatePhotoInteractiveTransition.m */,
+				CBE1921820809DE900215299 /* HXPhotoModel.m */,
+				CBE1921920809DE900215299 /* HXAlbumListViewController.m */,
+				CBE1921A20809DE900215299 /* UIButton+HXExtension.h */,
+				CBE1921B20809DE900215299 /* HXCustomPreviewView.h */,
+				CBE1921C20809DE900215299 /* UIView+HXExtension.m */,
+				CBE1921D20809DE900215299 /* HXPhotoCustomNavigationBar.m */,
+				CBE1921E20809DE900215299 /* HXAlbumModel.h */,
+				CBE1921F20809DE900215299 /* HXPhotoTools.m */,
+				CBE1922020809DE900215299 /* HXPhotoSubViewCell.h */,
+				CBE1922120809DE900215299 /* HXDatePhotoPreviewViewController.m */,
+				CBE1922220809DE900215299 /* HXDatePhotoViewFlowLayout.m */,
+				CBE1922320809DE900215299 /* HXDatePhotoViewController.m */,
+				CBE1922420809DE900215299 /* HXDatePhotoEditViewController.h */,
+				CBE1922520809DE900215299 /* HXDatePhotoToolManager.h */,
+				CBE1922620809DE900215299 /* HXPhotoManager.m */,
+				CBE1922720809DE900215299 /* HXDatePhotoViewPresentTransition.m */,
+				CBE1922820809DE900215299 /* HXDateVideoEditViewController.h */,
+				CBE1922920809DE900215299 /* HXPhotoDefine.h */,
+				CBE1922A20809DE900215299 /* HXCustomCameraController.m */,
+				CBE1922B20809DE900215299 /* HXDownloadProgressView.h */,
+				CBE1922C20809DE900215299 /* HXPhotoConfiguration.h */,
+				CBE1922D20809DE900215299 /* UIViewController+HXExtension.h */,
+				CBE1922E20809DE900215299 /* HXCustomCameraViewController.h */,
+				CBE1922F20809DE900215299 /* HXCollectionView.h */,
+				CBE1923020809DE900215299 /* UIImage+HXExtension.m */,
+				CBE1923120809DE900215299 /* HXCustomCollectionReusableView.m */,
+				CBE1923220809DE900215299 /* HXWeiboPhotoPicker.bundle */,
+				CBE1923320809DE900215299 /* NSBundle+HXWeiboPhotoPicker.h */,
+				CBE1923420809DE900215299 /* HXPhotoPicker.h */,
+				CBE1923520809DE900215299 /* HXPhotoView.m */,
+				CBE1923620809DE900215299 /* HXFullScreenCameraPlayView.m */,
+				CBE1923720809DE900215299 /* NSDate+HXExtension.m */,
+				CBE1923820809DE900215299 /* HXCustomNavigationController.m */,
+				CBE1923920809DE900215299 /* HXDatePhotoViewTransition.m */,
+				CBE1923A20809DE900215299 /* HXDatePhotoPreviewBottomView.h */,
+				CBE1923B20809DE900215299 /* HXPhoto3DTouchViewController.h */,
+				CBE1923C20809DE900215299 /* HXDatePhotoPreviewViewController.h */,
+				CBE1923D20809DE900215299 /* HXPhotoSubViewCell.m */,
+				CBE1923E20809DE900215299 /* HXPhotoTools.h */,
+				CBE1923F20809DE900215299 /* HXAlbumModel.m */,
+				CBE1924020809DE900215299 /* UIView+HXExtension.h */,
+				CBE1924120809DE900215299 /* HXPhotoCustomNavigationBar.h */,
+				CBE1924220809DE900215299 /* UIButton+HXExtension.m */,
+				CBE1924320809DE900215299 /* HXCustomPreviewView.m */,
+				CBE1924420809DE900215299 /* HXAlbumListViewController.h */,
+				CBE1924520809DE900215299 /* HXCircleProgressView.m */,
+				CBE1924620809DE900215299 /* UIFont+HXExtension.h */,
+				CBE1924720809DE900215299 /* HXPhotoModel.h */,
+				CBE1924820809DE900215299 /* HXDatePhotoInteractiveTransition.h */,
+				CBE1924920809DE900215299 /* UIImageView+HXExtension.h */,
+				CBE1924A20809DE900215299 /* HXDateVideoEditViewController.m */,
+				CBE1924B20809DE900215299 /* HXPhotoManager.h */,
+				CBE1924C20809DE900215299 /* HXDatePhotoViewPresentTransition.h */,
+				CBE1924D20809DE900215299 /* HXDatePhotoToolManager.m */,
+				CBE1924E20809DE900215299 /* HXDatePhotoEditViewController.m */,
+				CBE1924F20809DE900215299 /* HXDatePhotoViewController.h */,
+				CBE1925020809DE900215299 /* HXDatePhotoViewFlowLayout.h */,
+			);
+			path = HXWeiboPhotoPicker;
+			sourceTree = "<group>";
+		};
+		CBE192772080A13E00215299 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CBE192782080A13E00215299 /* UIImage+WebP.m */,
+				CBE192792080A13E00215299 /* MKAnnotationView+WebCache.m */,
+				CBE1927A2080A13E00215299 /* NSImage+WebCache.h */,
+				CBE1927B2080A13E00215299 /* UIImageView+WebCache.h */,
+				CBE1927C2080A13E00215299 /* NSData+ImageContentType.h */,
+				CBE1927D2080A13E00215299 /* SDWebImageManager.m */,
+				CBE1927E2080A13E00215299 /* SDWebImageDecoder.m */,
+				CBE1927F2080A13E00215299 /* SDWebImageDownloaderOperation.h */,
+				CBE192802080A13E00215299 /* UIImageView+HighlightedWebCache.m */,
+				CBE192812080A13E00215299 /* SDImageCache.h */,
+				CBE192822080A13E00215299 /* SDImageCacheConfig.h */,
+				CBE192832080A13E00215299 /* SDWebImageDownloader.m */,
+				CBE192842080A13E00215299 /* UIImage+GIF.m */,
+				CBE192852080A13E00215299 /* UIButton+WebCache.h */,
+				CBE192862080A13E00215299 /* UIImage+MultiFormat.m */,
+				CBE192872080A13E00215299 /* SDWebImageCompat.m */,
+				CBE192882080A13E00215299 /* SDWebImagePrefetcher.m */,
+				CBE192892080A13E00215299 /* UIView+WebCache.h */,
+				CBE1928A2080A13E00215299 /* UIView+WebCacheOperation.h */,
+				CBE1928B2080A13E00215299 /* MKAnnotationView+WebCache.h */,
+				CBE1928C2080A13E00215299 /* UIImage+WebP.h */,
+				CBE1928D2080A13E00215299 /* SDImageCache.m */,
+				CBE1928E2080A13E00215299 /* UIImageView+HighlightedWebCache.h */,
+				CBE1928F2080A13E00215299 /* SDWebImageDownloaderOperation.m */,
+				CBE192902080A13E00215299 /* SDWebImageDecoder.h */,
+				CBE192912080A13E00215299 /* SDWebImageManager.h */,
+				CBE192922080A13E00215299 /* NSData+ImageContentType.m */,
+				CBE192932080A13E00215299 /* UIImageView+WebCache.m */,
+				CBE192942080A13E00215299 /* SDWebImageOperation.h */,
+				CBE192952080A13E00215299 /* NSImage+WebCache.m */,
+				CBE192962080A13E00215299 /* SDWebImageDownloader.h */,
+				CBE192972080A13E00215299 /* SDImageCacheConfig.m */,
+				CBE192982080A13E00215299 /* UIView+WebCacheOperation.m */,
+				CBE192992080A13E00215299 /* UIView+WebCache.m */,
+				CBE1929A2080A13E00215299 /* SDWebImagePrefetcher.h */,
+				CBE1929B2080A13E00215299 /* SDWebImageCompat.h */,
+				CBE1929C2080A13E00215299 /* UIImage+MultiFormat.h */,
+				CBE1929D2080A13E00215299 /* UIButton+WebCache.m */,
+				CBE1929E2080A13E00215299 /* UIImage+GIF.h */,
+			);
+			path = SDWebImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +612,7 @@
 				CB4C70E4205FAFE40046A62A /* LaunchScreen.storyboard in Resources */,
 				CB4C7111205FB1320046A62A /* style.css in Resources */,
 				CB4C7112205FB1320046A62A /* article_editor.js in Resources */,
+				CBE1926920809DE900215299 /* HXWeiboPhotoPicker.bundle in Resources */,
 				CB4C7110205FB1320046A62A /* richText_editor.html in Resources */,
 				CB4C710F205FB1320046A62A /* normalize.css in Resources */,
 				CB4C70E1205FAFE40046A62A /* Assets.xcassets in Resources */,
@@ -336,14 +642,70 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE1926820809DE900215299 /* HXCustomCollectionReusableView.m in Sources */,
 				CB4C70DC205FAFE40046A62A /* ViewController.m in Sources */,
+				CBE1926B20809DE900215299 /* HXFullScreenCameraPlayView.m in Sources */,
+				CBE192AA2080A13E00215299 /* SDWebImageDownloaderOperation.m in Sources */,
 				CB4C70E7205FAFE40046A62A /* main.m in Sources */,
+				CBE1927520809DE900215299 /* HXDatePhotoToolManager.m in Sources */,
+				CBE1925120809DE900215299 /* HXCustomCameraViewController.m in Sources */,
 				CB4C7119205FB1990046A62A /* KWFontStyleBar.m in Sources */,
+				CBE192A22080A13E00215299 /* SDWebImageDecoder.m in Sources */,
+				CBE1925F20809DE900215299 /* HXPhotoCustomNavigationBar.m in Sources */,
+				CBE1926720809DE900215299 /* UIImage+HXExtension.m in Sources */,
+				CBE1926D20809DE900215299 /* HXCustomNavigationController.m in Sources */,
+				CBE1926E20809DE900215299 /* HXDatePhotoViewTransition.m in Sources */,
+				CBE1929F2080A13E00215299 /* UIImage+WebP.m in Sources */,
+				CBE192AD2080A13E00215299 /* NSImage+WebCache.m in Sources */,
+				CBE1926120809DE900215299 /* HXDatePhotoPreviewViewController.m in Sources */,
+				CBE1927320809DE900215299 /* HXCircleProgressView.m in Sources */,
+				CBE192AE2080A13E00215299 /* SDImageCacheConfig.m in Sources */,
+				CBE1927020809DE900215299 /* HXAlbumModel.m in Sources */,
+				CBE1925820809DE900215299 /* HXCollectionView.m in Sources */,
+				CBE1926620809DE900215299 /* HXCustomCameraController.m in Sources */,
+				CBE192A32080A13E00215299 /* UIImageView+HighlightedWebCache.m in Sources */,
+				CBE1925220809DE900215299 /* UIViewController+HXExtension.m in Sources */,
+				CBE192B02080A13E00215299 /* UIView+WebCache.m in Sources */,
 				CB4C711B205FB1990046A62A /* KWEditorBar.m in Sources */,
 				CB4C7121205FB1A20046A62A /* UIWebView+KWWebViewJSTool.m in Sources */,
+				CBE1926320809DE900215299 /* HXDatePhotoViewController.m in Sources */,
+				CBE1926520809DE900215299 /* HXDatePhotoViewPresentTransition.m in Sources */,
+				CBE1927620809DE900215299 /* HXDatePhotoEditViewController.m in Sources */,
+				CBE192AC2080A13E00215299 /* UIImageView+WebCache.m in Sources */,
+				CBE1927220809DE900215299 /* HXCustomPreviewView.m in Sources */,
+				CBE192A52080A13E00215299 /* UIImage+GIF.m in Sources */,
+				CBE1927120809DE900215299 /* UIButton+HXExtension.m in Sources */,
+				CBE192A62080A13E00215299 /* UIImage+MultiFormat.m in Sources */,
+				CBE1925C20809DE900215299 /* HXPhotoModel.m in Sources */,
+				CBE1926C20809DE900215299 /* NSDate+HXExtension.m in Sources */,
+				CBE192A72080A13E00215299 /* SDWebImageCompat.m in Sources */,
+				CBE192B12080A13E00215299 /* UIButton+WebCache.m in Sources */,
+				CBE1927420809DE900215299 /* HXDateVideoEditViewController.m in Sources */,
+				CBE1925420809DE900215299 /* HXDownloadProgressView.m in Sources */,
+				CBE1926A20809DE900215299 /* HXPhotoView.m in Sources */,
+				CBE1925520809DE900215299 /* HXPhoto3DTouchViewController.m in Sources */,
+				CBE1925620809DE900215299 /* HXDatePhotoPreviewBottomView.m in Sources */,
 				CB4C7125205FB48F0046A62A /* UIControl+KWButtonExtension.m in Sources */,
+				CBE192AF2080A13E00215299 /* UIView+WebCacheOperation.m in Sources */,
+				CBE192A12080A13E00215299 /* SDWebImageManager.m in Sources */,
+				CBE1925A20809DE900215299 /* UIFont+HXExtension.m in Sources */,
 				CB4C70D9205FAFE40046A62A /* AppDelegate.m in Sources */,
+				CBE192A82080A13E00215299 /* SDWebImagePrefetcher.m in Sources */,
+				CBE1926220809DE900215299 /* HXDatePhotoViewFlowLayout.m in Sources */,
+				CBE1925320809DE900215299 /* HXPhotoConfiguration.m in Sources */,
+				CBE1926420809DE900215299 /* HXPhotoManager.m in Sources */,
 				CB4C7120205FB1A20046A62A /* UIWebView+KWHideAccessoryView.m in Sources */,
+				CBE1925720809DE900215299 /* NSBundle+HXWeiboPhotoPicker.m in Sources */,
+				CBE1926F20809DE900215299 /* HXPhotoSubViewCell.m in Sources */,
+				CBE1925E20809DE900215299 /* UIView+HXExtension.m in Sources */,
+				CBE192A02080A13E00215299 /* MKAnnotationView+WebCache.m in Sources */,
+				CBE192A42080A13E00215299 /* SDWebImageDownloader.m in Sources */,
+				CBE1926020809DE900215299 /* HXPhotoTools.m in Sources */,
+				CBE1925B20809DE900215299 /* HXDatePhotoInteractiveTransition.m in Sources */,
+				CBE1925D20809DE900215299 /* HXAlbumListViewController.m in Sources */,
+				CBE1925920809DE900215299 /* UIImageView+HXExtension.m in Sources */,
+				CBE192AB2080A13E00215299 /* NSData+ImageContentType.m in Sources */,
+				CBE192A92080A13E00215299 /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,10 @@
 #import "UIWebView+KWWebViewJSTool.h"
 
 @implementation UIWebView (KWWebViewJSTool)
+- (NSString *)contentHtmlText{
+    return  [self stringByEvaluatingJavaScriptFromString:@"RE.getHtml();"];
+    
+}
 #pragma mark 标题内容
 - (NSString *)titleText{
     return  [self stringByEvaluatingJavaScriptFromString:@"RE.getTitle();"];
@@ -29,11 +33,6 @@
 
 - (NSString *)contentText{
     NSString *contentStr = [self stringByEvaluatingJavaScriptFromString:@"RE.getText();"];
-    if ([contentStr isEqualToString:@"\n"]) {
-        return @"";
-    }
-    
-   
     return  [contentStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];;
 }
 
@@ -111,12 +110,18 @@
                          stringWithFormat:@"RE.setJustifyRight();"];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
-
+- (void)blockQuote{
+    NSString *trigger = [NSString
+                         stringWithFormat:@"RE.setBlockquote();"];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+    
+}
 - (void)indent{
     NSString *trigger = [NSString
                          stringWithFormat:@"RE.setIndent();"];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
+
 - (void)outdent{
     NSString *trigger = [NSString
                          stringWithFormat:@"RE.setOutdent();"];
@@ -127,7 +132,12 @@
                          stringWithFormat:@"RE.setBullets();"];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
-
+- (void)orderlist{
+    NSString *trigger = [NSString
+                         stringWithFormat:@"RE.setNumbers();"];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+    
+}
 
 - (void)insertLinkUrl:(NSString *)url title:(NSString*)title content:(NSString *)content{
     

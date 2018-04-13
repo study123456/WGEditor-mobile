@@ -36,12 +36,15 @@
 - (void)justifyCenter;
 //右对齐
 - (void)justifyRight;
-
+// 向里缩进
 - (void)indent;
+// 向外缩进
 - (void)outdent;
 
-- (void)unorderlist;
+- (void)blockQuote;
 
+- (void)orderlist;
+- (void)unorderlist;
 
 - (void)heading1;
 - (void)heading2;

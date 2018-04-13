@@ -215,8 +215,11 @@ RE.setHeading = function(heading) {
 }
 
 RE.setIndent = function() {
+    
     document.execCommand('indent', false, null);
     RE.enabledEditingItems();
+    
+    
 }
 
 RE.setOutdent = function() {
@@ -439,8 +442,6 @@ RE.enabledEditingItems = function() {
 
     if (items.length > 0) {
         window.location.href = "re-state-content://" + encodeURI(items.join(','));
-
-
     } else {
         window.location.href = "re-state-content://";
     }
@@ -520,4 +521,15 @@ function getCaretYPosition(topY) {
     return topPosition;
 }
 
+function removeAppoint(){
+//    var parent=document.getElementById("blockquote");
+//    parent.removeChile(parent);
+}
 
+
+RE.editor.insertImageBase64String = function(imageBase64String, alt) {
+    RE.restorerange();
+    var html = '<img src="data:image/jpeg;base64,'+imageBase64String+'" alt="'+alt+'" />';
+    RE.insertHTML(html);
+    RE.enabledEditingItems();
+}
