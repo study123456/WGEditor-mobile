@@ -82,6 +82,7 @@
 		CBE192AF2080A13E00215299 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192982080A13E00215299 /* UIView+WebCacheOperation.m */; };
 		CBE192B02080A13E00215299 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE192992080A13E00215299 /* UIView+WebCache.m */; };
 		CBE192B12080A13E00215299 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1929D2080A13E00215299 /* UIButton+WebCache.m */; };
+		CBE192B22080BAA100215299 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4C70E6205FAFE40046A62A /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -713,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE192B22080BAA100215299 /* main.m in Sources */,
 				CB4C70F1205FAFE40046A62A /* WGRichTextEditorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
