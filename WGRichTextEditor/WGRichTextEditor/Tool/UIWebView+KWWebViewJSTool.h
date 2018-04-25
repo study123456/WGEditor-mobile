@@ -69,7 +69,8 @@
 //退出键盘
 - (void)hiddenKeyboard;
 
-- (void)getCaretYPosition;
+- (CGFloat)getCaretYPosition;
+- (void)autoScrollTop:(CGFloat)offsetY;
 
 - (void)setFontSize:(NSString *)size;
 //插入图片

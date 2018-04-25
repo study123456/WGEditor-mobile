@@ -75,10 +75,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    /// config
     [self.view addSubview:self.webView];
-    
-    
     [self.view addSubview:self.toolBarView];
     
     
@@ -117,28 +115,14 @@
 
 
 
-#pragma mark -加载草稿
-- (void)loadModifyArticleData{
-    
-    [self.webView setupTitle:@"test title"];
-    
-    
-    [self.webView setupContent:@"testcontent"];
-    
-//    self.tempContent = [self.webView contentHtmlText];
-    
-}
 
 #pragma mark -webviewdelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
-
-    
-    
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-//        NSLog(@"load error = %@",error);
-    
+    NSLog(@"NSEerror = %@",error);
+
     if([error code] == NSURLErrorCancelled){
         return;
     }
@@ -147,6 +131,7 @@
 {
     NSString *urlString = request.URL.absoluteString;
     NSLog(@"loadURL = %@",urlString);
+    
     [self handleEvent:urlString];
     
     if ([urlString rangeOfString:@"re-state-content://"].location != NSNotFound) {
@@ -190,7 +175,6 @@
 }
 
 
-
 - (void)dealloc{
     //    [self.timer pauseTimer];
     //    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
@@ -216,14 +200,7 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    
-    
     [super viewDidDisappear:animated];
-    
-    
-    //    if (!self.showImagePicker) {
-    //        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
-    //    }
     
 }
 
@@ -354,37 +331,12 @@
         case 10:{
             button.selected = !button.selected;
 
-//            [self.webView blockQuote];
-            
-            
             if (button.selected) {
 
                 [self.webView indent];
             }else{
                 [self.webView outdent];
             }
-//            if (button.selected) {
-//                NSLog(@"缩进");
-//                [self.webView stringByEvaluatingJavaScriptFromString:@"document.execCommand('indent')"];
-//            }else{
-//                NSLog(@"去掉缩进");
-//                 [self.webView stringByEvaluatingJavaScriptFromString:@"document.execCommand('outdent')"];
-//            }
-            
-//            if (fontBar.unorderlistItem.selected) {
-//                if (button.selected) {
-//                    [self.webView outdent];
-//                }else{
-//                    [self.webView indent];
-//                }
-//            }else{
-//                if (!button.selected) {
-//                    [self.webView indent];
-//                }else{
-//                    [self.webView outdent];
-//                }
-//
-//            }
         }
             break;
             
@@ -425,17 +377,9 @@
 }
 
 
+
+
 #pragma mark -上传图片
-- (void)showPhotos{
-   
-    HXAlbumListViewController *vc = [[HXAlbumListViewController alloc] init];
-    vc.manager = self.manager;
-    vc.delegate = self;
-    HXCustomNavigationController *nav = [[HXCustomNavigationController alloc] initWithRootViewController:vc];
-    nav.supportRotation = self.manager.configuration.supportRotation;
-    [self presentViewController:nav animated:YES completion:nil];
-    
-}
 - (void)albumListViewController:(HXAlbumListViewController *)albumListViewController didDoneAllList:(NSArray<HXPhotoModel *> *)allList photos:(NSArray<HXPhotoModel *> *)photoList videos:(NSArray<HXPhotoModel *> *)videoList original:(BOOL)original{
     
     [self.manager clearSelectedList];
@@ -450,12 +394,21 @@
 }
 
 #pragma mark -图片选择器
+- (void)showPhotos{
+    HXAlbumListViewController *vc = [[HXAlbumListViewController alloc] init];
+    vc.manager = self.manager;
+    vc.delegate = self;
+    HXCustomNavigationController *nav = [[HXCustomNavigationController alloc] initWithRootViewController:vc];
+    nav.supportRotation = self.manager.configuration.supportRotation;
+    [self presentViewController:nav animated:YES completion:nil];
+    
+}
 - (HXPhotoManager *)manager {
     if (!_manager) {
         _manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
         _manager.configuration.openCamera = YES;
         _manager.configuration.lookLivePhoto = YES;
-        _manager.configuration.photoMaxNum = 9;
+        _manager.configuration.photoMaxNum = 1;
         _manager.configuration.videoMaxNum = 6;
         _manager.configuration.maxNum = 10;
         _manager.configuration.videoMaxDuration = 500.f;
@@ -469,25 +422,6 @@
             UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
             imagePickerController.delegate = (id)weakSelf;
             imagePickerController.allowsEditing = NO;
-//            NSString *requiredMediaTypeImage = ( NSString *)kUTTypeImage;
-//            NSString *requiredMediaTypeMovie = ( NSString *)kUTTypeMovie;
-//            NSArray *arrMediaTypes;
-//            if (cameraType == HXPhotoConfigurationCameraTypePhoto) {
-//                arrMediaTypes=[NSArray arrayWithObjects:requiredMediaTypeImage,nil];
-//            }else if (cameraType == HXPhotoConfigurationCameraTypeVideo) {
-//                arrMediaTypes=[NSArray arrayWithObjects:requiredMediaTypeMovie,nil];
-//            }else {
-//                arrMediaTypes=[NSArray arrayWithObjects:requiredMediaTypeImage, requiredMediaTypeMovie,nil];
-//            }
-//            [imagePickerController setMediaTypes:arrMediaTypes];
-//            // 设置录制视频的质量
-//            [imagePickerController setVideoQuality:UIImagePickerControllerQualityTypeHigh];
-//            //设置最长摄像时间
-//            [imagePickerController setVideoMaximumDuration:60.f];
-//            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-//            imagePickerController.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//            imagePickerController.modalPresentationStyle=UIModalPresentationOverCurrentContext;
-//            [viewController presentViewController:imagePickerController animated:YES completion:nil];
         };
     }
     return _manager;

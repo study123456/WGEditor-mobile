@@ -225,10 +225,19 @@
     [self stringByEvaluatingJavaScriptFromString:@"document.activeElement.blur()"];
 }
 
-- (void)getCaretYPosition{
-    [self stringByEvaluatingJavaScriptFromString:@"getCaretYPosition();"];
+- (CGFloat)getCaretYPosition{
     
+    //    [self stringByEvaluatingJavaScriptFromString:@"RE.calculateEditorHeightWithCaretPosition()"];
+    
+    return [[self stringByEvaluatingJavaScriptFromString:@"RE.getCaretYPosition();"] floatValue];
 }
+- (void)autoScrollTop:(CGFloat)offsetY{
+    
+    NSString *str = [NSString stringWithFormat:@"RE.autoScroll(\"%f\");",offsetY];
+    
+    [self stringByEvaluatingJavaScriptFromString:str];
+}
+
 //font[size="2"]{
 //    font-size: 14px;
 //}
