@@ -31,8 +31,7 @@
 三、上传图片
 
 	实现思路：图片上传七牛服务器举例
-	
-	![image](https://github.com/study123456/WGEditor-mobile/blob/master/design_up.png)   
+	![image](https://github.com/study123456/WGEditor-mobile/blob/master/design_up.png)
 
 
 //开始插入图片
