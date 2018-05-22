@@ -48,7 +48,7 @@
 
   实现效果
 
-![image](https://github.com/study123456/WGEditor-mobile/blob/master/uploadImage.GIF)   
+![image](https://github.com/study123456/WGEditor-mobile/blob/master/WGEditor-mobile/rextEditor.GIF )   
 
 四、More 更多
 
