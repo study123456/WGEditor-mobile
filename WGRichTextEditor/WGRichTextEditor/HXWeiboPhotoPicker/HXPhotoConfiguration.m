@@ -107,6 +107,12 @@
     }
     return _themeColor;
 }
+- (UIColor *)toolBarTitleColor{
+    if (!_toolBarTitleColor) {
+        _toolBarTitleColor = [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1];
+    }
+    return _toolBarTitleColor;
+}
 - (NSString *)originalNormalImageName {
     if (!_originalNormalImageName) {
         _originalNormalImageName = @"hx_original_normal@2x.png";
@@ -116,7 +122,7 @@
 }
 - (NSString *)originalSelectedImageName {
     if (!_originalSelectedImageName) {
-        _originalSelectedImageName = @"hx_original_selected@2x.png";
+        _originalSelectedImageName = @"hx_original_selected";
         [HXPhotoTools hx_imageNamed:_originalSelectedImageName];
     }
     return _originalSelectedImageName;

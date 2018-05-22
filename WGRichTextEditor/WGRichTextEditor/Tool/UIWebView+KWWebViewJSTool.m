@@ -253,13 +253,116 @@
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
 
-- (void)inserImage:(UIImage *)image alt:(NSString *)alt{
-    NSData *scaledImageData = UIImageJPEGRepresentation(image, 0.8);
-    NSString *imageBase64String = [scaledImageData base64EncodedStringWithOptions:0];
+//插入编码图片
+- (void)inserImage:(NSData *)imageData key:(NSString *)key{
+    //    NSData *scaledImageData = UIImageJPEGRepresentation(image, 1);
+    NSString *imageBase64String = [imageData base64EncodedStringWithOptions:0];
     
-    NSString *trigger = [NSString stringWithFormat:@"RE.editor.insertImageBase64String(\"%@\", \"%@\");", imageBase64String, alt];
+    NSString *trigger = [NSString stringWithFormat:@"RE.insertImageBase64String(\"%@\", \"%@\");",imageBase64String,key];
     
     [self stringByEvaluatingJavaScriptFromString:trigger];
     
+}
+
+//图片上传中
+- (void)inserImageKey:(NSString *)imageKey progress:(CGFloat)progress{
+    NSString *trigger = [NSString stringWithFormat:@"RE.uploadImg(\"%@\", \"%.2f\");",imageKey, progress];
+    
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+    
+}
+//图片上传成功
+- (void)inserSuccessImageKey:(NSString *)imageKey imgUrl:(NSString *)imgUrl{
+    NSString *trigger = [NSString stringWithFormat:@"RE.insertSuccessReplaceImg(\"%@\", \"%@\");",imageKey, imgUrl];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+}
+//删除图片
+- (void)deleteImageKey:(NSString *)key{
+    NSString *trigger = [NSString stringWithFormat:@"RE.removeImg(\"%@\");",key];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+}
+- (void)setupContentDisable:(BOOL)disable{
+    NSString *trigger = [NSString stringWithFormat:@"RE.canFocus(\"%@\");",disable?@"true":@"false"];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+    
+    [self stringByEvaluatingJavaScriptFromString:@"RE.restorerange();"];
+}
+
+// 上传失败
+- (void)uploadErrorKey:(NSString *)key{
+    NSString *trigger = [NSString stringWithFormat:@"RE.uploadError(\"%@\");",key];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+}
+
+// 删除失败状态
+- (void)removeBtnErrorKey:(NSString *)key isHide:(BOOL)isHide{
+    NSString *trigger = [NSString stringWithFormat:@"RE.removeErrorBtn(\"%@\",\"%@\");",key,isHide?@"true":@"false"];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
+}
+
+@end
+
+@implementation NSString (UUID)
+
++ (NSString *)uuid {
+    CFUUIDRef uuidRef = CFUUIDCreate(nil);
+    CFStringRef uuidString = CFUUIDCreateString(nil, uuidRef);
+    NSString *uuid = (__bridge NSString *)uuidString;
+    CFRelease(uuidString);
+    CFRelease(uuidRef);
+    
+    return uuid;
+}
+
+-(id)jsonObject
+{
+    NSError *error = nil;
+    if (!self) {
+        return nil;
+    }
+    id result = [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding]
+                                                options:NSJSONReadingMutableContainers
+                                                  error:&error];
+    if (error || [NSJSONSerialization isValidJSONObject:result] == NO)
+    {
+        //        YKLog(@"json is %@",self);
+        return nil;
+    }
+    
+    return result;
+}
+-(NSString*)stringByAppendingUrlComponent:(NSString*)string{
+    
+    NSString* urlhost = [self toTrim];
+    if([string isBeginWith:@"/"]){
+        
+        if([urlhost isEndWith:@"/"])
+        {
+            urlhost = [urlhost substringToIndex:urlhost.length - 1];
+        }
+    }
+    else
+    {
+        if([urlhost isEndWith:@"/"] == NO)
+        {
+            urlhost = [urlhost stringByAppendingString:@"/"];
+        }
+    }
+    return [urlhost stringByAppendingString:string];
+}
+-(BOOL) isBeginWith:(NSString *)string
+{
+    return ([self hasPrefix:string]) ? YES : NO;
+}
+
+-(BOOL) isEndWith:(NSString *)string
+{
+    return ([self hasSuffix:string]) ? YES : NO;
+}
+-(NSString*) toTrim
+{
+    NSString *trimmedString = [self stringByTrimmingCharactersInSet:
+                               [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return trimmedString;
 }
 @end

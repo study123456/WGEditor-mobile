@@ -28,18 +28,42 @@
 - (void)inserImage:(UIImage *)image alt:(NSString *)alt;
 .....
 
+三、上传图片
 
-三、More 更多
+	实现思路：图片上传七牛服务器举例
+	
+	![image](https://github.com/study123456/WGEditor-mobile/blob/master/design_up.png)   
+
+
+//开始插入图片
+- (void)inserImage:(NSData *)imageData key:(NSString *)key;
+//图片上传中
+- (void)inserImageKey:(NSString *)imageKey progress:(CGFloat)progress;
+//图片上传成功
+- (void)inserSuccessImageKey:(NSString *)imageKey imgUrl:(NSString *)imgUrl;
+//删除图片
+- (void)deleteImageKey:(NSString *)key;
+// 上传失败
+- (void)uploadErrorKey:(NSString *)key;
+
+  实现效果
+
+![image](https://github.com/study123456/WGEditor-mobile/blob/master/uploadImage.GIF)   
+
+四、More 更多
 
 如果你发现了bug，请提一个issue。 欢迎给我提pull requests。
 请尽可能详细地描述系统版本、手机型号、库的版本、崩溃日志和复现步骤，请先更新到最新版再测试一下，如果新版还存在再提~如果已有开启的类似issue，请直接在该issue下评论说出你的问题
 
-四、Other 其它
+五、Other 其它
+
+本次更新
+
+1>图片上传功能
 
 常见问题
 
 Q:自动换行问题
 A:排期中，优先级高
 
-Q:图片上传完善(模拟网络图片上传)
-A:排期中，优先级高
+

@@ -81,6 +81,11 @@ typedef enum : NSUInteger {
 @property (assign, nonatomic) BOOL movableCropBoxEditSize;
 
 /**
+ 图片最大允许多大(M为单位)
+ */
+@property (nonatomic,assign) NSInteger imageMaxSize;
+
+/**
  可移动裁剪框的比例 (w,h)
  一定要是宽比高哦!!!
  当 movableCropBox = YES && movableCropBoxEditSize = YES
@@ -139,6 +144,10 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) UIColor *selectedTitleColor;
 
 /**
+ 底部字体颜色
+ */
+@property (strong, nonatomic) UIColor *toolBarTitleColor;
+/**
  sectionHeader悬浮时的标题颜色 ios9以上才有效果
  */
 @property (strong, nonatomic) UIColor *sectionHeaderSuspensionTitleColor;
@@ -191,6 +200,7 @@ typedef enum : NSUInteger {
  是否隐藏原图按钮  默认 NO
  */
 @property (assign, nonatomic) BOOL hideOriginalBtn;
+
 
 /**
  sectionHeader 是否显示照片的位置信息 默认 5、6不显示，其余的显示

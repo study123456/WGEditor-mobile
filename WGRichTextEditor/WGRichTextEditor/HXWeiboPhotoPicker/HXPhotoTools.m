@@ -12,6 +12,7 @@
 #import "HXPhotoManager.h"
 #import <sys/utsname.h> 
 #import <MobileCoreServices/MobileCoreServices.h>
+//#import "UIImage+FixOrientation.h"
 @implementation HXPhotoTools
 
 + (UIImage *)hx_imageNamed:(NSString *)imageName {
@@ -1394,4 +1395,47 @@
         return nil;
     }
 }
+
++ (CGFloat)getPhotoForPHAsset:(PHAsset *)asset{
+
+    if (asset.mediaType == PHAssetMediaTypeImage) {
+        PHAssetResource *resource = [[PHAssetResource assetResourcesForAsset:asset] firstObject];
+        long long originFileSize = [[resource valueForKey:@"fileSize"] longLongValue];
+        int fileSize = (int)originFileSize;
+        return fileSize/1024/1024.0; ///M为单位
+    }
+    return 0.0f;
+}
+
+
+/**
+ 通过资源获取图片的数据
+ @param mAsset 资源文件
+ @param imageBlock 图片数据回传
+ */
++ (void)fetchImageWithAsset:(PHAsset*)mAsset photoModel:(HXPhotoModel *)photoModel imageBlock:(void(^)(NSData*imgData,UIImage *img))imageBlock {
+    
+    if (!mAsset) {
+            UIImage* image = photoModel.previewPhoto;
+            NSData *imageData = UIImageJPEGRepresentation(image, 1);
+            if (imageBlock) {
+                imageBlock(imageData,image);
+            }
+            return;
+    }
+    [[PHImageManager defaultManager] requestImageDataForAsset:mAsset options:nil resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+        UIImage* image = [UIImage imageWithData:imageData];
+        if (orientation != UIImageOrientationUp) {
+//            image = [image fixOrientation];
+            imageData = UIImageJPEGRepresentation(image, 1);
+        }
+        // 直接得到最终的 NSData 数据
+        if (imageBlock) {
+            imageBlock(imageData,image);
+        }
+    }];
+}
+
+
+
 @end

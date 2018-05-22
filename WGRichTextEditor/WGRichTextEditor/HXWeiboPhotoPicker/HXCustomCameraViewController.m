@@ -223,6 +223,7 @@
         model.thumbPhoto = self.imageView.image;
         model.imageSize = self.imageView.image.size;
         model.previewPhoto = self.imageView.image;
+        
 //        model.cameraIdentifier = [self videoOutFutFileName];
     }else {
         if (self.time < 3) {

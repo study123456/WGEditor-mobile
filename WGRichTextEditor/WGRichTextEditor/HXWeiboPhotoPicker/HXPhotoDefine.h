@@ -32,4 +32,6 @@
 
 #define iOS8_2Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.2f)
 
+
+
 #endif /* HXPhotoDefine_h */

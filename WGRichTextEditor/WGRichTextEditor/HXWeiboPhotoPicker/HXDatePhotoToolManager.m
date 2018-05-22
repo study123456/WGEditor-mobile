@@ -27,8 +27,6 @@
 @property (strong, nonatomic) NSMutableArray *allArray;
 
 @property (strong, nonatomic) NSMutableArray *downloadTokenArray;
-
-
 @property (copy, nonatomic) HXDatePhotoToolManagerGetImageListSuccessHandler imageSuccessHandler;
 @property (copy, nonatomic) HXDatePhotoToolManagerGetImageListFailedHandler imageFailedHandler;
 @property (assign, nonatomic) BOOL gettingImage;

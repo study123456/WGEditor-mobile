@@ -22,6 +22,7 @@
 #import "UIViewController+HXExtension.h"
 
 #import "UIImageView+HXExtension.h"
+#import "HXCustomButton.h"
 
 #if __has_include(<SDWebImage/UIImageView+WebCache.h>)
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -76,6 +77,7 @@ HXDatePhotoEditViewControllerDelegate
     if (self.needChangeViewFrame) {
         self.needChangeViewFrame = NO;
     }
+    self.bottomView.originalBtn.selected = self.manager.original;
 }
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
@@ -415,7 +417,7 @@ HXDatePhotoEditViewControllerDelegate
         if (self.manager.configuration.cellSelectedBgColor) {
             cell.selectBgColor = self.manager.configuration.cellSelectedBgColor;
         }else {
-            cell.selectBgColor = self.manager.configuration.themeColor;
+            cell.selectBgColor = self.manager.configuration.toolBarTitleColor;
         }
         //        cell.section = indexPath.section;
         //        cell.item = indexPath.item;
@@ -699,7 +701,7 @@ HXDatePhotoEditViewControllerDelegate
     if (self.manager.configuration.cellSelectedBgColor) {
         bgColor = self.manager.configuration.cellSelectedBgColor;
     }else {
-        bgColor = self.manager.configuration.themeColor;
+        bgColor = self.manager.configuration.toolBarTitleColor;
     }
     selectBtn.backgroundColor = selectBtn.selected ? bgColor : nil;
     if (!selectBtn.selected) {
@@ -1059,7 +1061,7 @@ HXDatePhotoEditViewControllerDelegate
 @property (assign, nonatomic) PHImageRequestID iCloudRequestID;
 @property (strong, nonatomic) UILabel *stateLb;
 @property (strong, nonatomic) CAGradientLayer *bottomMaskLayer;
-@property (strong, nonatomic) UIButton *selectBtn;
+@property (strong, nonatomic) HXCustomButton *selectBtn;
 @property (strong, nonatomic) UIImageView *iCloudIcon;
 @property (strong, nonatomic) CALayer *iCloudMaskLayer;
 @property (strong, nonatomic) HXDownloadProgressView *downloadView;
@@ -1390,16 +1392,19 @@ HXDatePhotoEditViewControllerDelegate
     }
     return _bottomMaskLayer;
 }
-- (UIButton *)selectBtn {
+- (HXCustomButton *)selectBtn {
     if (!_selectBtn) {
-        _selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_selectBtn setBackgroundImage:[HXPhotoTools hx_imageNamed:@"compose_guide_check_box_default@2x.png"] forState:UIControlStateNormal];
-        [_selectBtn setBackgroundImage:[[UIImage alloc] init] forState:UIControlStateSelected];
+        _selectBtn = [HXCustomButton buttonWithType:UIButtonTypeCustom];
+//        [_selectBtn setBackgroundImage:[HXPhotoTools hx_imageNamed:@"compose_guide_check_box_default@2x.png"] forState:UIControlStateNormal];
+//        [_selectBtn setBackgroundImage:[[UIImage alloc] init] forState:UIControlStateSelected];
+        [_selectBtn setBackgroundImage:[HXPhotoTools hx_imageNamed:@"guide_check_box"] forState:UIControlStateNormal];
+        [_selectBtn setBackgroundImage:[HXPhotoTools hx_imageNamed:@"guide_check_box_Sel"] forState:UIControlStateSelected];
         [_selectBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        _selectBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        _selectBtn.titleLabel.font = [UIFont systemFontOfSize:16];
         _selectBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
         [_selectBtn addTarget:self action:@selector(didSelectClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_selectBtn setEnlargeEdgeWithTop:0 right:0 bottom:20 left:20];
+//        [_selectBtn setEnlargeEdgeWithTop:0 right:30 bottom:30 left:30];
+        _selectBtn.amplifierRange = 35;
         _selectBtn.layer.cornerRadius = 25 / 2;
     }
     return _selectBtn;
@@ -1631,16 +1636,16 @@ HXDatePhotoEditViewControllerDelegate
     }
     self.originalBtn.selected = self.manager.original;
     
-    [self.previewBtn setTitleColor:self.manager.configuration.themeColor forState:UIControlStateNormal];
-    [self.previewBtn setTitleColor:[self.manager.configuration.themeColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
-    self.doneBtn.backgroundColor = [self.manager.configuration.themeColor colorWithAlphaComponent:0.5];
-    [self.originalBtn setTitleColor:self.manager.configuration.themeColor forState:UIControlStateNormal];
-    [self.originalBtn setTitleColor:[self.manager.configuration.themeColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
+    [self.previewBtn setTitleColor:self.manager.configuration.toolBarTitleColor forState:UIControlStateNormal];
+    [self.previewBtn setTitleColor:[self.manager.configuration.toolBarTitleColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
+    self.doneBtn.backgroundColor = [self.manager.configuration.toolBarTitleColor colorWithAlphaComponent:0.5];
+    [self.originalBtn setTitleColor:self.manager.configuration.toolBarTitleColor forState:UIControlStateNormal];
+    [self.originalBtn setTitleColor:[self.manager.configuration.toolBarTitleColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
     [self.originalBtn setImage:[HXPhotoTools hx_imageNamed:self.manager.configuration.originalNormalImageName] forState:UIControlStateNormal];
     [self.originalBtn setImage:[HXPhotoTools hx_imageNamed:self.manager.configuration.originalSelectedImageName] forState:UIControlStateSelected];
-    [self.editBtn setTitleColor:self.manager.configuration.themeColor forState:UIControlStateNormal];
-    [self.editBtn setTitleColor:[self.manager.configuration.themeColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
-    if ([self.manager.configuration.themeColor isEqual:[UIColor whiteColor]]) {
+    [self.editBtn setTitleColor:self.manager.configuration.toolBarTitleColor forState:UIControlStateNormal];
+    [self.editBtn setTitleColor:[self.manager.configuration.toolBarTitleColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
+    if ([self.manager.configuration.toolBarTitleColor isEqual:[UIColor whiteColor]]) {
         [self.doneBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self.doneBtn setTitleColor:[[UIColor blackColor] colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
     }
@@ -1673,7 +1678,7 @@ HXDatePhotoEditViewControllerDelegate
         }
     }
     
-    self.doneBtn.backgroundColor = self.doneBtn.enabled ? self.manager.configuration.themeColor : [self.manager.configuration.themeColor colorWithAlphaComponent:0.5];
+    self.doneBtn.backgroundColor = self.doneBtn.enabled ? self.manager.configuration.toolBarTitleColor : [self.manager.configuration.toolBarTitleColor colorWithAlphaComponent:0.5];
     [self changeDoneBtnFrame];
     
     if (!self.manager.configuration.selectTogether) {
@@ -1697,8 +1702,8 @@ HXDatePhotoEditViewControllerDelegate
         }
     }
     if (self.manager.selectedPhotoArray.count == 0) {
-        self.originalBtn.enabled = NO;
-        self.originalBtn.selected = NO;
+        self.originalBtn.enabled = YES;
+//        self.originalBtn.selected = NO;
         [self.manager setOriginal:NO] ;
     }else { 
         self.originalBtn.enabled = YES;
@@ -1786,7 +1791,7 @@ HXDatePhotoEditViewControllerDelegate
         _originalBtn.titleLabel.font = [UIFont systemFontOfSize:16];
         _originalBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 35, 0, 0);
         _originalBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
-        _originalBtn.enabled = NO;
+        _originalBtn.enabled = YES;
         _originalBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     }
     return _originalBtn;

@@ -247,7 +247,7 @@ HXDateVideoEditViewControllerDelegate
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.selectBtn];
         self.selectBtn.selected = model.selected;
         [self.selectBtn setTitle:model.selectIndexStr forState:UIControlStateSelected];
-        self.selectBtn.backgroundColor = self.selectBtn.selected ? self.manager.configuration.themeColor : nil;
+        self.selectBtn.backgroundColor = self.selectBtn.selected ? self.manager.configuration.toolBarTitleColor : nil;
         if ([self.manager.selectedArray containsObject:model]) {
             self.bottomView.currentIndex = [[self.manager selectedArray] indexOfObject:model];
         }else {
@@ -339,7 +339,7 @@ HXDateVideoEditViewControllerDelegate
         anim.values = @[@(1.2),@(0.8),@(1.1),@(0.9),@(1.0)];
         [button.layer addAnimation:anim forKey:@""];
     }
-    button.backgroundColor = button.selected ? self.manager.configuration.themeColor : nil;
+    button.backgroundColor = button.selected ? self.manager.configuration.toolBarTitleColor : nil;
     if ([self.delegate respondsToSelector:@selector(datePhotoPreviewControllerDidSelect:model:)]) {
         [self.delegate datePhotoPreviewControllerDidSelect:self model:model];
     }
@@ -479,7 +479,7 @@ HXDateVideoEditViewControllerDelegate
         }
         self.selectBtn.selected = model.selected;
         [self.selectBtn setTitle:model.selectIndexStr forState:UIControlStateSelected];
-        self.selectBtn.backgroundColor = self.selectBtn.selected ? self.manager.configuration.themeColor : nil;
+        self.selectBtn.backgroundColor = self.selectBtn.selected ? self.manager.configuration.toolBarTitleColor : nil;
         if (self.outside) {
             if ([[self.manager afterSelectedArray] containsObject:model]) {
                 self.bottomView.currentIndex = [[self.manager afterSelectedArray] indexOfObject:model];
@@ -786,7 +786,7 @@ HXDateVideoEditViewControllerDelegate
 - (UIButton *)selectBtn {
     if (!_selectBtn) {
         _selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_selectBtn setBackgroundImage:[HXPhotoTools hx_imageNamed:@"compose_guide_check_box_default111@2x.png"] forState:UIControlStateNormal];
+        [_selectBtn setBackgroundImage:[HXPhotoTools hx_imageNamed:@"guide_check_box"] forState:UIControlStateNormal];
         [_selectBtn setBackgroundImage:[[UIImage alloc] init] forState:UIControlStateSelected];
         if ([self.manager.configuration.themeColor isEqual:[UIColor whiteColor]]) {
             [_selectBtn setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
@@ -796,12 +796,12 @@ HXDateVideoEditViewControllerDelegate
         if (self.manager.configuration.selectedTitleColor) {
             [_selectBtn setTitleColor:self.manager.configuration.selectedTitleColor forState:UIControlStateSelected];
         }
-        _selectBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        _selectBtn.titleLabel.font = [UIFont systemFontOfSize:16];
         _selectBtn.adjustsImageWhenDisabled = YES;
         [_selectBtn addTarget:self action:@selector(didSelectClick:) forControlEvents:UIControlEventTouchUpInside];
-        _selectBtn.hx_size = CGSizeMake(24, 24);
-        [_selectBtn setEnlargeEdgeWithTop:0 right:0 bottom:20 left:20];
-        _selectBtn.layer.cornerRadius = 12;
+        _selectBtn.hx_size = CGSizeMake(28, 28);
+//        [_selectBtn setEnlargeEdgeWithTop:0 right:30 bottom:30 left:30];
+        _selectBtn.layer.cornerRadius = 28/2;
     }
     return _selectBtn;
 }

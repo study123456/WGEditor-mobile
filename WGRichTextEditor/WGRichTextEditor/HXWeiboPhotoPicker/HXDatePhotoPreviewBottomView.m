@@ -35,24 +35,37 @@
     [self addSubview:self.doneBtn];
     [self addSubview:self.editBtn];
     [self changeDoneBtnFrame];
+    
+//    if (self.manager.selectedPhotoArray.count == 0) {
+//        self.editBtn.selected = NO;
+//        [self.manager setOriginal:NO] ;
+//    }else {
+//        self.editBtn.enabled = YES;
+//    }
+    
+    self.editBtn.selected = self.manager.original;
 }
-- (void)setEnabled:(BOOL)enabled {
-    _enabled = enabled;
-    self.editBtn.enabled = enabled;
-}
-- (void)setHideEditBtn:(BOOL)hideEditBtn {
-    _hideEditBtn = hideEditBtn;
-    if (hideEditBtn) {
-        [self.editBtn removeFromSuperview];
-        [self layoutSubviews];
-    }
-}
+
+//- (void)setEnabled:(BOOL)enabled {
+//    _enabled = enabled;
+//    self.editBtn.enabled = enabled;
+//}
+
+//- (void)setHideEditBtn:(BOOL)hideEditBtn {
+//    _hideEditBtn = hideEditBtn;
+//    if (hideEditBtn) {
+//        [self.editBtn removeFromSuperview];
+//        [self layoutSubviews];
+//    }
+//}
+
 - (void)setOutside:(BOOL)outside {
     _outside = outside;
     if (outside) {
         self.doneBtn.hidden = YES;
     }
 }
+
 - (void)insertModel:(HXPhotoModel *)model {
     [self.modelArray addObject:model];
     [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.modelArray.count - 1 inSection:0]]];
@@ -73,12 +86,19 @@
     self.currentIndexPath = [NSIndexPath indexPathForItem:currentIndex inSection:0];
 //    [self.collectionView scrollToItemAtIndexPath:self.currentIndexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     [self.collectionView selectItemAtIndexPath:self.currentIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    
 }
 - (void)setSelectCount:(NSInteger)selectCount {
     _selectCount = selectCount;
     if (selectCount <= 0) {
         [self.doneBtn setTitle:@"完成" forState:UIControlStateNormal];
+
+//        self.editBtn.enabled = NO;
+        self.doneBtn.enabled = NO;
+        
     }else {
+        self.doneBtn.enabled = YES;
+        self.editBtn.enabled = YES;
         if (self.manager.configuration.doneBtnShowDetail) {
             if (!self.manager.configuration.selectTogether) {
                 if (self.manager.selectedPhotoCount > 0) {
@@ -94,6 +114,8 @@
         }
     }
     [self changeDoneBtnFrame];
+    
+    self.editBtn.selected = self.manager.original;
 }
 #pragma mark - < UICollectionViewDataSource >
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -101,7 +123,7 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HXDatePhotoPreviewBottomViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DatePreviewBottomViewCellId" forIndexPath:indexPath];
-    cell.selectColor = self.manager.configuration.themeColor;
+    cell.selectColor = self.manager.configuration.toolBarTitleColor;
     HXPhotoModel *model = self.modelArray[indexPath.item];
     cell.model = model;
     return cell;
@@ -143,10 +165,10 @@
     if (self.outside) {
         if (self.manager.type == HXPhotoManagerSelectedTypeVideo) {
             self.editBtn.hidden = YES;
-            self.collectionView.hx_w = self.hx_w;
+            self.collectionView.hx_w = self.hx_w - 20;
         }else {
-            self.editBtn.hx_x = self.hx_w - 12 - self.editBtn.hx_w;
-            self.collectionView.hx_w = self.editBtn.hx_x;
+            self.editBtn.hx_x = self.hx_w - 12 - self.editBtn.hx_w -10;
+            self.collectionView.hx_w = self.editBtn.hx_x-20- 35;
         }
     }else {
         CGFloat width = [HXPhotoTools getTextWidth:self.doneBtn.currentTitle height:30 fontSize:14];
@@ -155,11 +177,12 @@
             self.doneBtn.hx_w = 50;
         }
         self.doneBtn.hx_x = self.hx_w - 12 - self.doneBtn.hx_w;
-        self.editBtn.hx_x = self.doneBtn.hx_x - self.editBtn.hx_w;
+        self.editBtn.hx_x = self.doneBtn.hx_x - self.editBtn.hx_w-10;
+        
         if (!self.hideEditBtn) {
-            self.collectionView.hx_w = self.editBtn.hx_x;
+            self.collectionView.hx_w = self.editBtn.hx_x-20- 35;
         }else {
-            self.collectionView.hx_w = self.doneBtn.hx_x - 12;
+            self.collectionView.hx_w = self.doneBtn.hx_x - 12 - 20- 35;
         }
     }
 }
@@ -170,6 +193,7 @@
     self.doneBtn.frame = CGRectMake(0, 0, 50, 30);
     self.doneBtn.center = CGPointMake(self.doneBtn.center.x, 25);
     [self changeDoneBtnFrame];
+    
 }
 #pragma mark - < 懒加载 >
 - (UIToolbar *)bgView {
@@ -207,7 +231,7 @@
     if (!_doneBtn) {
         _doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_doneBtn setTitle:@"完成" forState:UIControlStateNormal];
-        if ([self.manager.configuration.themeColor isEqual:[UIColor whiteColor]]) {
+        if ([self.manager.configuration.toolBarTitleColor isEqual:[UIColor whiteColor]]) {
             [_doneBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [_doneBtn setTitleColor:[[UIColor blackColor] colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
         }else {
@@ -220,19 +244,34 @@
         }
         _doneBtn.titleLabel.font = [UIFont hx_pingFangFontOfSize:14];
         _doneBtn.layer.cornerRadius = 3;
-        _doneBtn.backgroundColor = self.manager.configuration.themeColor;
+        _doneBtn.backgroundColor = self.manager.configuration.toolBarTitleColor;
         [_doneBtn addTarget:self action:@selector(didDoneBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _doneBtn;
 }
+
+- (void)didOriginalClick:(UIButton *)button {
+    button.selected = !button.selected;
+    [self.manager setOriginal:button.selected];
+}
 - (UIButton *)editBtn {
     if (!_editBtn) {
         _editBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_editBtn setTitle:@"编辑" forState:UIControlStateNormal];
-        [_editBtn setTitleColor:self.manager.configuration.themeColor forState:UIControlStateNormal];
-        [_editBtn setTitleColor:[self.manager.configuration.themeColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
+//        [_editBtn setTitle:@"编辑" forState:UIControlStateNormal];
+                [_editBtn setTitle:@"原图" forState:UIControlStateNormal];
+        [_editBtn setTitleColor:self.manager.configuration.toolBarTitleColor forState:UIControlStateNormal];
+        [_editBtn setTitleColor:[self.manager.configuration.toolBarTitleColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
         _editBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_editBtn addTarget:self action:@selector(didEditBtnClick) forControlEvents:UIControlEventTouchUpInside];
+//        [_editBtn addTarget:self action:@selector(didEditBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _editBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 35, 0, 0);
+        _editBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
+        _editBtn.enabled = YES;
+        _editBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_editBtn addTarget:self action:@selector(didOriginalClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_editBtn setTitleColor:self.manager.configuration.toolBarTitleColor forState:UIControlStateNormal];
+        [_editBtn setTitleColor:[self.manager.configuration.toolBarTitleColor colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
+        [_editBtn setImage:[HXPhotoTools hx_imageNamed:self.manager.configuration.originalNormalImageName] forState:UIControlStateNormal];
+        [_editBtn setImage:[HXPhotoTools hx_imageNamed:self.manager.configuration.originalSelectedImageName] forState:UIControlStateSelected];
         _editBtn.hx_size = CGSizeMake(50, 50);
     }
     return _editBtn;
@@ -306,7 +345,7 @@
 }
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
-    self.layer.borderWidth = selected ? 5 : 0;
+    self.layer.borderWidth = selected ? 3 : 0;
     self.layer.borderColor = selected ? [self.selectColor colorWithAlphaComponent:0.5].CGColor : nil;
 }
 - (void)cancelRequest {

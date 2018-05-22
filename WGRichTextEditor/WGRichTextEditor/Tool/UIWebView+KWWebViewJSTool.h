@@ -73,6 +73,29 @@
 - (void)autoScrollTop:(CGFloat)offsetY;
 
 - (void)setFontSize:(NSString *)size;
-//插入图片
-- (void)inserImage:(UIImage *)image alt:(NSString *)alt;
+
+
+//开始插入图片
+- (void)inserImage:(NSData *)imageData key:(NSString *)key;
+//图片上传中更新进度条
+- (void)inserImageKey:(NSString *)imageKey progress:(CGFloat)progress;
+//图片上传成功 替换img标签
+- (void)inserSuccessImageKey:(NSString *)imageKey imgUrl:(NSString *)imgUrl;
+//删除图片
+- (void)deleteImageKey:(NSString *)key;
+
+//设置编辑器内容是否可编辑(解决弹出键盘问题)
+- (void)setupContentDisable:(BOOL)disable;
+
+// 上传失败
+- (void)uploadErrorKey:(NSString *)key;
+- (void)removeBtnErrorKey:(NSString *)key isHide:(BOOL)isHide;
+@end
+
+@interface NSString (UUID)
+
++ (NSString *)uuid;
+- (id)jsonObject;
+- (NSString*)removeSubstring:(NSString *)subString;
+
 @end

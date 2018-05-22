@@ -42,6 +42,18 @@
 + (CLGeocoder *)getDateLocationDetailInformationWithModel:(HXPhotoDateModel *)model completion:(void (^)(CLPlacemark *placemark,HXPhotoDateModel *model))completion;
 
 /**
+ 根据PHAsset对象获取照片信息   返回image.data.length
+ */
++ (CGFloat)getPhotoForPHAsset:(PHAsset *)asset;
+
+/**
+ 通过资源获取图片的数据
+ @param mAsset 资源文件
+ @param imageBlock 图片数据回传
+ */
++ (void)fetchImageWithAsset:(PHAsset*)mAsset photoModel:(HXPhotoModel *)photoModel imageBlock:(void(^)(NSData*imgData,UIImage *img))imageBlock;
+
+/**
  根据PHAsset对象获取照片信息   此方法会回调多次
  */
 + (PHImageRequestID)getPhotoForPHAsset:(PHAsset *)asset size:(CGSize)size completion:(void(^)(UIImage *image,NSDictionary *info))completion;

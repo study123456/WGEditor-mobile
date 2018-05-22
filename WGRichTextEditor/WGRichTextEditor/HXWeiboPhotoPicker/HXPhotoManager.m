@@ -9,7 +9,7 @@
 #import "HXPhotoManager.h"
 #import <mach/mach_time.h>
 
-
+#import <AssetsLibrary/AssetsLibrary.h>
 @interface HXPhotoManager ()<PHPhotoLibraryChangeObserver>
 @property (strong, nonatomic) NSMutableArray *allPhotos;
 @property (strong, nonatomic) NSMutableArray *allVideos;
@@ -700,8 +700,9 @@
 - (NSString *)maximumOfJudgment:(HXPhotoModel *)model {
     if ([self beforeSelectCountIsMaximum]) {
         // 已经达到最大选择数 [NSString stringWithFormat:@"最多只能选择%ld个",manager.maxNum]
-        return [NSString stringWithFormat:[NSBundle hx_localizedStringForKey:@"最多只能选择%ld个"],self.configuration.maxNum];
+        return [NSString stringWithFormat:[NSBundle hx_localizedStringForKey:@"最多只能选择%ld张图片"],self.configuration.maxNum];
     }
+    
     if (self.type == HXPhotoManagerSelectedTypePhotoAndVideo) {
         if ((model.type == HXPhotoModelMediaTypePhoto || model.type == HXPhotoModelMediaTypePhotoGif) || (model.type == HXPhotoModelMediaTypeCameraPhoto || model.type == HXPhotoModelMediaTypeLivePhoto)) {
             if (self.configuration.videoMaxNum > 0) {
@@ -733,6 +734,10 @@
             }
         }
     }else if (self.type == HXPhotoManagerSelectedTypePhoto) {
+        if ([HXPhotoTools getPhotoForPHAsset:model.asset] > self.configuration.imageMaxSize) {
+          return  [NSString stringWithFormat:[NSBundle hx_localizedStringForKey:@"图片不能大于%zdM"],self.configuration.imageMaxSize];
+        }
+        
         if ([self beforeSelectPhotoCountIsMaximum]) {
             // 已经达到图片最大选择数
             return [NSString stringWithFormat:[NSBundle hx_localizedStringForKey:@"最多只能选择%ld张图片"],self.configuration.photoMaxNum];

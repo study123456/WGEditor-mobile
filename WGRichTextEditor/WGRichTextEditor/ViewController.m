@@ -15,7 +15,7 @@
 
 #define kEditorURL @"richText_editor"
 //#define kEditorURL @"z-test"
-@interface ViewController ()<UITextViewDelegate,UIWebViewDelegate,KWEditorBarDelegate,KWFontStyleBarDelegate,HXAlbumListViewControllerDelegate>
+@interface ViewController ()<UITextViewDelegate,UIWebViewDelegate,KWEditorBarDelegate,KWFontStyleBarDelegate,HXAlbumListViewControllerDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UIWebView *webView;
@@ -127,6 +127,22 @@
         return;
     }
 }
+//获取IMG标签
+-(NSArray*)getImgTags:(NSString *)htmlText
+{
+    if (htmlText == nil) {
+        return nil;
+    }
+    NSError *error;
+    NSString *regulaStr = @"<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regulaStr
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    NSArray *arrayOfAllMatches = [regex matchesInString:htmlText options:0 range:NSMakeRange(0, [htmlText length])];
+    
+    return arrayOfAllMatches;
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString *urlString = request.URL.absoluteString;
@@ -138,11 +154,11 @@
         NSString *className = [urlString stringByReplacingOccurrencesOfString:@"re-state-content://" withString:@""];
         
         [self.fontBar updateFontBarWithButtonName:className];
-        
         if ([self.webView contentText].length <= 0) {
-            
             [self.webView showContentPlaceholder];
-        
+            if ([self getImgTags:[self.webView contentHtmlText]].count > 0) {
+                [self.webView clearContentPlaceholder];
+            }
         }else{
             [self.webView clearContentPlaceholder];
         }
@@ -154,7 +170,7 @@
         
     }
     
-    
+    [self handleWithString:urlString];
     return YES;
 }
 #pragma mar - webView监听处理事件
@@ -176,9 +192,6 @@
 
 
 - (void)dealloc{
-    //    [self.timer pauseTimer];
-    //    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
-    //     [self loadWebView:@"about:blank"]
     @try {
         [self.toolBarView removeObserver:self forKeyPath:@"transform"];
     } @catch (NSException *exception)
@@ -330,9 +343,7 @@
             break;
         case 10:{
             button.selected = !button.selected;
-
             if (button.selected) {
-
                 [self.webView indent];
             }else{
                 [self.webView outdent];
@@ -377,7 +388,7 @@
 }
 
 
-
+//-------- 下面为图片选择器(这不是重点)----
 
 #pragma mark -上传图片
 - (void)albumListViewController:(HXAlbumListViewController *)albumListViewController didDoneAllList:(NSArray<HXPhotoModel *> *)allList photos:(NSArray<HXPhotoModel *> *)photoList videos:(NSArray<HXPhotoModel *> *)videoList original:(BOOL)original{
@@ -385,12 +396,64 @@
     [self.manager clearSelectedList];
  
     if (photoList.count > 0) {
-        for (HXPhotoModel *photoM in photoList) {
-            [self.webView inserImage:photoM.thumbPhoto alt:nil];
+        for (int i = 0; i<photoList.count; i++) {
+            
+            HXPhotoModel *picM = photoList[i];
+            WGUploadPictureModel *uploadM = [[WGUploadPictureModel alloc] init];
+            uploadM.image = picM.thumbPhoto;
+            uploadM.key = [NSString uuid];
+            uploadM.imageData = UIImageJPEGRepresentation(picM.thumbPhoto,0.8f);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //1、插入本地图片
+                [self.webView inserImage:uploadM.imageData key:uploadM.key];
+                
+                //2、模拟网络请求上传图片 更新进度
+                [self.webView inserImageKey:uploadM.key progress:0.5];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.webView inserImageKey:uploadM.key progress:1];
+                    BOOL error;
+                    if (!error) {
+                        //3、上传成功替换返回的网络地址图片
+                        [self.webView inserSuccessImageKey:uploadM.key imgUrl:@"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4278445236,4070967445&fm=173&app=25&f=JPEG?w=218&h=146&s=B1145A915E28110D18B9A940030080B2"];
+                    }else{
+                        //3、上传失败 显示失败的样式
+                        [self.webView uploadErrorKey:uploadM.key];
+                    }
+                    
+                });
+                
+                
+            });
         }
         
     }
     
+}
+
+#pragma mark -图片操作
+- (BOOL)handleWithString:(NSString *)urlString{
+    if ([urlString hasPrefix:@"protocol://iOS?code=uploadResult&data"]) {
+        NSRange range = [urlString rangeOfString:@"protocol://iOS?code=uploadResult&data="];
+        
+        NSMutableDictionary *dict = [[[urlString substringFromIndex:range.length] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] jsonObject];
+        
+        NSString *meg = [NSString stringWithFormat:@"上传的图片ID为%@",dict[@"imgId"]];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:meg message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"删除图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //根据自身业务需要处理图片操作：如删除、重新上传图片操作等
+            //例如删除图片执行函数imgID=key;
+            [self.webView deleteImageKey:dict[@"imgId"]];
+        }];
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark -图片选择器
@@ -405,24 +468,21 @@
 }
 - (HXPhotoManager *)manager {
     if (!_manager) {
-        _manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
-        _manager.configuration.openCamera = YES;
-        _manager.configuration.lookLivePhoto = YES;
-        _manager.configuration.photoMaxNum = 1;
-        _manager.configuration.videoMaxNum = 6;
-        _manager.configuration.maxNum = 10;
-        _manager.configuration.videoMaxDuration = 500.f;
-        _manager.configuration.saveSystemAblum = NO;
-        //        _manager.configuration.reverseDate = YES;
-        _manager.configuration.showDateSectionHeader = NO;
+        _manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
+        _manager.configuration.toolBarTitleColor = COLOR(33,189,109,1);
+        _manager.configuration.videoMaxNum = 1;
+        _manager.configuration.imageMaxSize = 5;
         _manager.configuration.selectTogether = NO;
-        __weak typeof(self) weakSelf = self;
-        _manager.configuration.shouldUseCamera = ^(UIViewController *viewController, HXPhotoConfigurationCameraType cameraType, HXPhotoManager *manager) {
-            // 这里拿使用系统相机做例子
-            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-            imagePickerController.delegate = (id)weakSelf;
-            imagePickerController.allowsEditing = NO;
-        };
+        _manager.configuration.deleteTemporaryPhoto = NO;
+        _manager.configuration.rowCount = 4;
+        _manager.configuration.reverseDate = YES;
+        _manager.configuration.singleJumpEdit = NO;
+        _manager.configuration.saveSystemAblum = YES;
+        _manager.configuration.supportRotation = NO;
+        _manager.configuration.hideOriginalBtn = NO;
+    _manager.configuration.navigationTitleColor = [UIColor blackColor];
+    _manager.configuration.showDateSectionHeader =NO;
+        _manager.configuration.singleSelected = NO;
     }
     return _manager;
 }

@@ -150,6 +150,7 @@ UITableViewDelegate
     self.title = @"相册";
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelClick)];
+
     if (self.manager.configuration.singleSelected) {
         [self.view addSubview:self.tableView];
     }else {

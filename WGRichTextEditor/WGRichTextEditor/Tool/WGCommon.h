@@ -16,3 +16,4 @@
 #import "UIWebView+KWHideAccessoryView.h"
 #import "KWEditorBar.h"
 #import "KWFontStyleBar.h"
+#import "WGUploadPictureModel.h"
