@@ -13,9 +13,11 @@
 - 常用函数
 - (NSString *)titleText;
 - (void)setupTitle:(NSString *)title;
+
 //撤销
 - (void)undo;
 - (void)redo;
+
 //加粗
 - (void)bold;
 //下划线
@@ -24,6 +26,7 @@
 - (void)italic;
 //左对齐
 - (void)justifyLeft;
+
 //插入图片
 - (void)inserImage:(UIImage *)image alt:(NSString *)alt;
 .....
