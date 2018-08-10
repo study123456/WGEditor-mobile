@@ -9,54 +9,48 @@
 #import "UIWebView+KWWebViewJSTool.h"
 
 @implementation UIWebView (KWWebViewJSTool)
+#pragma mark 标题、内容
+//- (NSString *)getHTML{
+//    
+//    NSString *html = [self contentHtmlText];
+//    html = [self removeQuotesFromHTML:html];
+//    html = [self tidyHTML:html];
+//    return html;
+//    
+//}
 - (NSString *)contentHtmlText{
     return  [self stringByEvaluatingJavaScriptFromString:@"RE.getHtml();"];
-    
 }
-#pragma mark 标题内容
 - (NSString *)titleText{
     return  [self stringByEvaluatingJavaScriptFromString:@"RE.getTitle();"];
 }
-
 - (void)setupTitle:(NSString *)title{
-    NSString *htmlTitle = [title stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    htmlTitle = [htmlTitle stringByReplacingOccurrencesOfString:@"&middot;" withString:@"·"];
-    
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setTitle(\"%@\");",htmlTitle];
+    NSString *trigger = [NSString stringWithFormat:@"RE.setTitle(\"%@\");",title];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
-
-
-
 
 - (NSString *)contentText{
     NSString *contentStr = [self stringByEvaluatingJavaScriptFromString:@"RE.getText();"];
     return  [contentStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];;
 }
 
-
 - (void)setupContent:(NSString *)content{
-    NSString *html = [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setHtml(\"%@\");",html];
+    NSString *html = [content stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *trigger = [NSString stringWithFormat:@"RE.setHtml(\"%@\");",html];
+    
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
 
 
 - (void)clearContentPlaceholder{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.clearBackTxt();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.clearBackTxt();"];
 }
 
 - (void)showContentPlaceholder{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.showBackTxt();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.showBackTxt();"];
 }
 
+#pragma mark - Utilities
 
 - (NSString *)removeQuotesFromHTML:(NSString *)html {
     html = [html stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
@@ -67,157 +61,116 @@
     return html;
 }
 
+
+- (NSString *)tidyHTML:(NSString *)html {
+    html = [html stringByReplacingOccurrencesOfString:@"<br>" withString:@"<br />"];
+    html = [html stringByReplacingOccurrencesOfString:@"<hr>" withString:@"<hr />"];
+    
+    return [self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"style_html(\"%@\");", html]];
+}
+
 - (void)undo{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.undo();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.undo();"];
 }
 
 - (void)redo{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.redo();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.redo();"];
 }
 - (void)bold{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setBold();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setBold();"];
 }
 - (void)italic{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setItalic();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setItalic();"];
 }
 - (void)underline{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setUnderline();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setUnderline();"];
 }
 - (void)justifyLeft{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setJustifyLeft();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setJustifyLeft();"];
 }
 
 - (void)justifyCenter{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setJustifyCenter();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setJustifyCenter();"];
 }
 
 - (void)justifyRight{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setJustifyRight();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setJustifyRight();"];
 }
 - (void)blockQuote{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setBlockquote();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setBlockquote();"];
     
 }
 - (void)indent{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setIndent();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setIndent();"];
 }
 
 - (void)outdent{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setOutdent();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setOutdent();"];
 }
 - (void)unorderlist{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setBullets();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setBullets();"];
 }
 - (void)orderlist{
-    NSString *trigger = [NSString
-                         stringWithFormat:@"RE.setNumbers();"];
-    [self stringByEvaluatingJavaScriptFromString:trigger];
-    
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setNumbers();"];
 }
 
 - (void)insertLinkUrl:(NSString *)url title:(NSString*)title content:(NSString *)content{
+    NSString *trigger= [NSString stringWithFormat:@"RE.insertLink(\"%@\", \"%@\",\"%@\",);",url,title,content];
     
-//    if (![url isValidUrl]) {
-//        url = [NSString stringWithFormat:@"http://%@",url];
-//    }
-//    KWLog(@"url = %@",url);
-//    NSString *trigger= [NSString
-//                  stringWithFormat:@"RE.insertLink(\"%@\", \"%@\",\"%@\",);",url,title,content];
-//    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:trigger];
 
 }
 - (void)heading1 {
-    NSString *trigger = @"RE.setHeading('1');";
-    [self stringByEvaluatingJavaScriptFromString:trigger];
-
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setHeading('1');"];
 }
 
 - (void)heading2 {
-    NSString *trigger = @"RE.setHeading('2');";
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString: @"RE.setHeading('2');"];
 }
 
 - (void)heading3 {
-    NSString *trigger = @"RE.setHeading('3');";
-    [self stringByEvaluatingJavaScriptFromString:trigger];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.setHeading('3');"];
 }
 
 //唤醒键盘
 - (void)focusTextEditor{
     self.keyboardDisplayRequiresUserAction = NO;
-    NSString *js = [NSString stringWithFormat:@"RE.focusEditor();"];
-    [self stringByEvaluatingJavaScriptFromString:js];
+    [self stringByEvaluatingJavaScriptFromString:@"RE.focusEditor();"];
 }
+
 - (void)normalFontSize{
-        NSString *trigger = [NSString stringWithFormat:@"RE.setFontSize(\"%@\");", @"3"];
+    NSString *trigger = [NSString stringWithFormat:@"RE.setFontSize(\"%@\");", @"3"];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
 
 - (void)insertImageUrl:(NSString *)imageUrl alt:(NSString *)alt {
     NSString *trigger = [NSString stringWithFormat:@"RE.insertImage(\"%@\", \"%@\");", imageUrl, alt];
+    
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
 
-//获取webView选中内容
 - (NSString *)getSelectString{
-    return   [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
+    return  [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
 }
-//获取选中内容标签值
+
 - (NSString *)getSelection{
     NSString *tagName = [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().anchorNode.parentNode.tagName.toString()"];
-    NSLog(@"%@",tagName);
     return [tagName stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
-- (void)focus{
-    [self stringByEvaluatingJavaScriptFromString:@"document.getElementById(\"article_content\").focus();"];
-        [self stringByEvaluatingJavaScriptFromString:@"document.getElementById(\"article_content\").select();"];
-    
-}
 
-
-//清除超链接
 - (void)clearLink{
       [self stringByEvaluatingJavaScriptFromString:@"RE.clearLink();"];
 //    [self showKeyboardContent];
 }
 
-
-//标题聚焦 - 唤醒键盘
 - (void)showKeyboardTitle{
     self.keyboardDisplayRequiresUserAction = NO;
     [self stringByEvaluatingJavaScriptFromString:@"document.getElementById(\"article_title\").focus()"];
 }
 
-//标题聚焦 - 唤醒键盘
 - (void)showKeyboardContent{
     self.keyboardDisplayRequiresUserAction = NO;
     [self stringByEvaluatingJavaScriptFromString:@"document.getElementById(\"article_content\").focus()"];
-    
-//    [self stringByEvaluatingJavaScriptFromString:@"RE.focus();"];
 }
 
 //退出键盘
@@ -226,29 +179,17 @@
 }
 
 - (CGFloat)getCaretYPosition{
-    
     //    [self stringByEvaluatingJavaScriptFromString:@"RE.calculateEditorHeightWithCaretPosition()"];
     
     return [[self stringByEvaluatingJavaScriptFromString:@"RE.getCaretYPosition();"] floatValue];
 }
 - (void)autoScrollTop:(CGFloat)offsetY{
-    
     NSString *str = [NSString stringWithFormat:@"RE.autoScroll(\"%f\");",offsetY];
     
     [self stringByEvaluatingJavaScriptFromString:str];
 }
 
-//font[size="2"]{
-//    font-size: 14px;
-//}
-//font[size="3"]{
-//    font-size: 16px;
-//}
-//font[size="4"]{
-//    font-size: 18px;
-//}
 - (void)setFontSize:(NSString *)size{
-    
     NSString *trigger = [NSString stringWithFormat:@"RE.setFontSize(\"%@\");", size];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
@@ -257,9 +198,7 @@
 - (void)inserImage:(NSData *)imageData key:(NSString *)key{
     //    NSData *scaledImageData = UIImageJPEGRepresentation(image, 1);
     NSString *imageBase64String = [imageData base64EncodedStringWithOptions:0];
-    
     NSString *trigger = [NSString stringWithFormat:@"RE.insertImageBase64String(\"%@\", \"%@\");",imageBase64String,key];
-    
     [self stringByEvaluatingJavaScriptFromString:trigger];
     
 }
@@ -267,20 +206,19 @@
 //图片上传中
 - (void)inserImageKey:(NSString *)imageKey progress:(CGFloat)progress{
     NSString *trigger = [NSString stringWithFormat:@"RE.uploadImg(\"%@\", \"%.2f\");",imageKey, progress];
-    
     [self stringByEvaluatingJavaScriptFromString:trigger];
-    
 }
-//图片上传成功
+
 - (void)inserSuccessImageKey:(NSString *)imageKey imgUrl:(NSString *)imgUrl{
     NSString *trigger = [NSString stringWithFormat:@"RE.insertSuccessReplaceImg(\"%@\", \"%@\");",imageKey, imgUrl];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
-//删除图片
+
 - (void)deleteImageKey:(NSString *)key{
     NSString *trigger = [NSString stringWithFormat:@"RE.removeImg(\"%@\");",key];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
+
 - (void)setupContentDisable:(BOOL)disable{
     NSString *trigger = [NSString stringWithFormat:@"RE.canFocus(\"%@\");",disable?@"true":@"false"];
     [self stringByEvaluatingJavaScriptFromString:trigger];
@@ -288,13 +226,11 @@
     [self stringByEvaluatingJavaScriptFromString:@"RE.restorerange();"];
 }
 
-// 上传失败
 - (void)uploadErrorKey:(NSString *)key{
     NSString *trigger = [NSString stringWithFormat:@"RE.uploadError(\"%@\");",key];
     [self stringByEvaluatingJavaScriptFromString:trigger];
 }
 
-// 删除失败状态
 - (void)removeBtnErrorKey:(NSString *)key isHide:(BOOL)isHide{
     NSString *trigger = [NSString stringWithFormat:@"RE.removeErrorBtn(\"%@\",\"%@\");",key,isHide?@"true":@"false"];
     [self stringByEvaluatingJavaScriptFromString:trigger];
@@ -302,8 +238,9 @@
 
 @end
 
-@implementation NSString (UUID)
 
+
+@implementation NSString (UUID)
 + (NSString *)uuid {
     CFUUIDRef uuidRef = CFUUIDCreate(nil);
     CFStringRef uuidString = CFUUIDCreateString(nil, uuidRef);
@@ -314,8 +251,7 @@
     return uuid;
 }
 
--(id)jsonObject
-{
+-(id)jsonObject{
     NSError *error = nil;
     if (!self) {
         return nil;
@@ -323,44 +259,31 @@
     id result = [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding]
                                                 options:NSJSONReadingMutableContainers
                                                   error:&error];
-    if (error || [NSJSONSerialization isValidJSONObject:result] == NO)
-    {
-        //        YKLog(@"json is %@",self);
+    if (error || [NSJSONSerialization isValidJSONObject:result] == NO){
         return nil;
     }
-    
     return result;
 }
 -(NSString*)stringByAppendingUrlComponent:(NSString*)string{
-    
     NSString* urlhost = [self toTrim];
     if([string isBeginWith:@"/"]){
-        
-        if([urlhost isEndWith:@"/"])
-        {
+        if([urlhost isEndWith:@"/"]){
             urlhost = [urlhost substringToIndex:urlhost.length - 1];
         }
-    }
-    else
-    {
-        if([urlhost isEndWith:@"/"] == NO)
-        {
+    }else{
+        if([urlhost isEndWith:@"/"] == NO){
             urlhost = [urlhost stringByAppendingString:@"/"];
         }
     }
     return [urlhost stringByAppendingString:string];
 }
--(BOOL) isBeginWith:(NSString *)string
-{
+-(BOOL)isBeginWith:(NSString *)string{
     return ([self hasPrefix:string]) ? YES : NO;
 }
-
--(BOOL) isEndWith:(NSString *)string
-{
+-(BOOL)isEndWith:(NSString *)string{
     return ([self hasSuffix:string]) ? YES : NO;
 }
--(NSString*) toTrim
-{
+-(NSString*)toTrim{
     NSString *trimmedString = [self stringByTrimmingCharactersInSet:
                                [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return trimmedString;

@@ -34,6 +34,8 @@
 @property (nonatomic,strong) KWFontStyleBar *fontBar;
 @property (nonatomic,strong) HXPhotoManager *manager;
 @property (nonatomic,strong) HXPhotoView *photoView;
+
+@property (nonatomic,assign) BOOL showHtml;
 @end
 
 @implementation ViewController
@@ -62,7 +64,7 @@
         NSURL *baseURL = [NSURL fileURLWithPath:path];
         NSString * htmlPath = [[NSBundle mainBundle] pathForResource:kEditorURL                                                              ofType:@"html"];
         NSString * htmlCont = [NSString stringWithContentsOfFile:htmlPath
-                                                        encoding:NSUTF8StringEncoding
+                                            encoding:NSUTF8StringEncoding
                                                            error:nil];
         [_webView loadHTMLString:htmlCont baseURL:baseURL];
         _webView.scrollView.bounces=NO;
@@ -87,10 +89,10 @@
      NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
   
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"HTML" style:UIBarButtonItemStylePlain target:self action:@selector(getHTML)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"HTML" style:UIBarButtonItemStylePlain target:self action:@selector(getHTMLText)];
     
 }
-- (void)getHTML{
+- (void)getHTMLText{
     
     NSLog(@"%@",[self.webView contentHtmlText]);
     
@@ -115,13 +117,12 @@
 
 
 
-
 #pragma mark -webviewdelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    
+    NSLog(@"webViewDidFinishLoad");
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    NSLog(@"NSEerror = %@",error);
+    NSLog(@"NSError = %@",error);
 
     if([error code] == NSURLErrorCancelled){
         return;
@@ -202,8 +203,12 @@
     }
     self.timer = nil;
 }
+
+
+/**
+ *  是否显示占位文字
+ */
 - (void)isShowPlaceholder{
-    
     if ([self.webView contentText].length <= 0)
     {
         [self.webView showContentPlaceholder];
@@ -212,65 +217,44 @@
     }
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    
-}
-
-
-
-
 #pragma mark -editorbarDelegate
 - (void)editorBar:(KWEditorBar *)editorBar didClickIndex:(NSInteger)buttonIndex{
-    
     switch (buttonIndex) {
-        case 0:
+        case 0:{
+            //显示或隐藏键盘
             if (self.toolBarView.transform.ty < 0) {
                 [self.webView hiddenKeyboard];
             }else{
                 [self.webView showKeyboardContent];
             }
+            
+        }
             break;
         case 1:{
-//            [self.webView undo];
+            //回退
             [self.webView stringByEvaluatingJavaScriptFromString:@"document.execCommand('undo')"];
-            
         }
             break;
         case 2:{
                [self.webView stringByEvaluatingJavaScriptFromString:@"document.execCommand('redo')"];
-            
-//            [self.webView redo];
         }
             break;
-        case 3:
+        case 3:{
+            //显示更多区域
             editorBar.fontButton.selected = !editorBar.fontButton.selected;
             if (editorBar.fontButton.selected) {
                 [self.view addSubview:self.fontBar];
             }else{
                 [self.fontBar removeFromSuperview];
             }
+        }
             break;
         case 4:{
-            
-            NSString *selectionStr = [self.webView getSelectString];
-            if (selectionStr.length > 0) {
-                if ([[self.webView getSelection] isEqualToString:@"A"]) {
-                    [self.webView clearLink];
-                    
-                }else{
-//                    [self showLinkView:selectionStr];
-                }
-            }else{
-                if (!self.toolBarView.keyboardButton.selected){
-                    [self.webView showKeyboardContent];
-                }
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                    [self showLinkView:nil];
-                });
-            }
+            //插入地址
+            [self.webView insertLinkUrl:@"https://www.baidu.com/" title:@"百度" content:@"百度一下"];
         }break;
         case 5:{
+            //插入图片
             if (!self.toolBarView.keyboardButton.selected) {
                 [self.webView showKeyboardContent];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -279,8 +263,6 @@
             }else{
                 [self showPhotos];
             }
-            
-            
         }
             break;
         default:
@@ -290,58 +272,53 @@
 }
 #pragma mark - fontbardelegate
 - (void)fontBar:(KWFontStyleBar *)fontBar didClickBtn:(UIButton *)button{
-    
-    
     if (self.toolBarView.transform.ty>=0) {
         [self.webView showKeyboardContent];
     }
-    
     switch (button.tag) {
         case 0:{
+            //粗体
             [self.webView bold];
         }
             break;
-        case 1:{
+        case 1:{//下划线
             [self.webView underline];
         }
             break;
-        case 2:{
+        case 2:{//斜体
             [self.webView italic];
         }
             break;
-        case 3:{
-            //            [self.webView heading3];
-            
+        case 3:{//14号字体
             [self.webView setFontSize:@"2"];
         }
             break;
-        case 4:{
-            //            [self.webView heading2];
+        case 4:{//16号字体
             [self.webView setFontSize:@"3"];
         }
             break;
-        case 5:{
-            //            [self.webView heading1];
+        case 5:{//18号字体
             [self.webView setFontSize:@"4"];
         }
             break;
-        case 6:{
+        case 6:{//左对齐
             [self.webView justifyLeft];
         }
             break;
-        case 7:{
+        case 7:{//居中对齐
             [self.webView justifyCenter];
         }
             break;
-        case 8:{
+        case 8:{//右对齐
             [self.webView justifyRight];
         }
             break;
-        case 9:{
+        case 9:{//无序
             [self.webView unorderlist];
         }
             break;
         case 10:{
+            //缩进
             button.selected = !button.selected;
             if (button.selected) {
                 [self.webView indent];
@@ -350,8 +327,6 @@
             }
         }
             break;
-            
-            
         case 11:{
             
         }
@@ -413,7 +388,7 @@
                 [self.webView inserImageKey:uploadM.key progress:0.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.webView inserImageKey:uploadM.key progress:1];
-                    BOOL error;
+                    BOOL error = false;
                     if (!error) {
                         //3、上传成功替换返回的网络地址图片
                         [self.webView inserSuccessImageKey:uploadM.key imgUrl:@"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4278445236,4070967445&fm=173&app=25&f=JPEG?w=218&h=146&s=B1145A915E28110D18B9A940030080B2"];
@@ -437,7 +412,7 @@
     if ([urlString hasPrefix:@"protocol://iOS?code=uploadResult&data"]) {
         NSRange range = [urlString rangeOfString:@"protocol://iOS?code=uploadResult&data="];
         
-        NSMutableDictionary *dict = [[[urlString substringFromIndex:range.length] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] jsonObject];
+        NSMutableDictionary *dict = [[[urlString substringFromIndex:range.length] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] jsonObject];
         
         NSString *meg = [NSString stringWithFormat:@"上传的图片ID为%@",dict[@"imgId"]];
         

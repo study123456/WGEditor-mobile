@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//底部编辑栏高度
 #define KWEditorBar_Height 44
 
 @class KWEditorBar;
