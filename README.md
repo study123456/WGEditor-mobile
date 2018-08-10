@@ -59,13 +59,14 @@ https://github.com/study123456/WGEditor-mobile/blob/master/design_up.png
 
 五、Other 其它
 
-本次更新
+近期更新
 
-1>图片上传功能
+1、图片上传功能
+2、代码规范化
 
 常见问题
 
 Q:自动换行问题
-A:排期中，优先级高
+A:排期中
 
 
