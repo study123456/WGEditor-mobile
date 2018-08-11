@@ -63,6 +63,7 @@ https://github.com/study123456/WGEditor-mobile/blob/master/design_up.png
 
 1、图片上传功能
 2、代码规范化
+3、插入链接
 
 常见问题
 
