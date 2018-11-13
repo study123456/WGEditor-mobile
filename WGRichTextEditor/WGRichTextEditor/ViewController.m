@@ -36,9 +36,21 @@
 @property (nonatomic,strong) HXPhotoView *photoView;
 
 @property (nonatomic,assign) BOOL showHtml;
+
+
+/**
+ *  存放所有正在上传及失败的图片model
+ */
+@property (nonatomic,strong) NSMutableArray *uploadPics;
 @end
 
 @implementation ViewController
+- (NSMutableArray *)uploadPics{
+    if (!_uploadPics) {
+        _uploadPics = [NSMutableArray array];
+    }
+    return _uploadPics;
+}
 - (KWEditorBar *)toolBarView{
     if (!_toolBarView) {
         _toolBarView = [KWEditorBar editorBar];
@@ -155,6 +167,7 @@
         NSString *className = [urlString stringByReplacingOccurrencesOfString:@"re-state-content://" withString:@""];
         
         [self.fontBar updateFontBarWithButtonName:className];
+        
         if ([self.webView contentText].length <= 0) {
             [self.webView showContentPlaceholder];
             if ([self getImgTags:[self.webView contentHtmlText]].count > 0) {
@@ -179,9 +192,9 @@
     if ([urlString hasPrefix:@"re-state-content://"]) {
         self.fontBar.hidden = NO;
         self.toolBarView.hidden = NO;
-        if ([self.webView contentText].length <= 0) {
+//        if ([self.webView contentText].length <= 0) {
 //            [self.webView.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-        }
+//        }
     }
     
     if ([urlString hasPrefix:@"re-state-title://"]) {
@@ -363,8 +376,6 @@
 }
 
 
-//-------- 下面为图片选择器(这不是重点)----
-
 #pragma mark -上传图片
 - (void)albumListViewController:(HXAlbumListViewController *)albumListViewController didDoneAllList:(NSArray<HXPhotoModel *> *)allList photos:(NSArray<HXPhotoModel *> *)photoList videos:(NSArray<HXPhotoModel *> *)videoList original:(BOOL)original{
     
@@ -388,13 +399,25 @@
                 [self.webView inserImageKey:uploadM.key progress:0.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.webView inserImageKey:uploadM.key progress:1];
-                    BOOL error = false;
+//                    BOOL error = false; //上传成功样式
+                    
+                    BOOL error = true; //上传失败样式
                     if (!error) {
                         //3、上传成功替换返回的网络地址图片
                         [self.webView inserSuccessImageKey:uploadM.key imgUrl:@"https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4278445236,4070967445&fm=173&app=25&f=JPEG?w=218&h=146&s=B1145A915E28110D18B9A940030080B2"];
+                        
+                        uploadM.type = WGUploadImageModelTypeError;
+                        
+                        if ([self.uploadPics containsObject:uploadM]) {
+                            [self.uploadPics removeObject:uploadM];
+                        }
                     }else{
                         //3、上传失败 显示失败的样式
                         [self.webView uploadErrorKey:uploadM.key];
+                        
+                        uploadM.type = WGUploadImageModelTypeError;
+                        
+                        [self.uploadPics addObject:uploadM];
                     }
                     
                 });
@@ -407,21 +430,45 @@
     
 }
 
-#pragma mark -图片操作
+#pragma mark -图片点击操作
 - (BOOL)handleWithString:(NSString *)urlString{
-    if ([urlString hasPrefix:@"protocol://iOS?code=uploadResult&data"]) {
-        NSRange range = [urlString rangeOfString:@"protocol://iOS?code=uploadResult&data="];
+    
+    //点击的图片标记URL（自定义）
+    NSString *preStr = @"protocol://iOS?code=uploadResult&data=";
+    
+    if ([urlString hasPrefix:preStr]) {
+        NSString *result = [urlString stringByReplacingOccurrencesOfString:preStr withString:@" "];
         
-        NSMutableDictionary *dict = [[[urlString substringFromIndex:range.length] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] jsonObject];
+        NSString *jsonString = [result stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *err;
         
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+
         NSString *meg = [NSString stringWithFormat:@"上传的图片ID为%@",dict[@"imgId"]];
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:meg message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+        //上传状态 - 默认上传成功
+        BOOL uploadState = YES;
         
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"删除图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        for (WGUploadPictureModel *upPic in self.uploadPics) {
+            if (upPic.type == WGUploadImageModelTypeError) {
+                //上传失败的
+                uploadState = false;
+            }
+        }
+        
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:uploadState?@"删除图片":@"重新上传" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //根据自身业务需要处理图片操作：如删除、重新上传图片操作等
-            //例如删除图片执行函数imgID=key;
-            [self.webView deleteImageKey:dict[@"imgId"]];
+            if (uploadState) {
+                //例如删除图片执行函数imgID=key;
+                [self.webView deleteImageKey:dict[@"imgId"]];
+            }else{
+                //见387行代码 上传片段 。。。
+            }
         }];
         
         [alert addAction:ok];

@@ -217,6 +217,9 @@
 - (void)deleteImageKey:(NSString *)key{
     NSString *trigger = [NSString stringWithFormat:@"RE.removeImg(\"%@\");",key];
     [self stringByEvaluatingJavaScriptFromString:trigger];
+    
+    //可编辑
+    [self stringByEvaluatingJavaScriptFromString:@"RE.canFocus(true);"];
 }
 
 - (void)setupContentDisable:(BOOL)disable{

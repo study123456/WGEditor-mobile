@@ -549,16 +549,10 @@ RE.insertImageBase64String = function(imageData,imgId) {
     
     var flag = false;
     window.addEventListener("touchmove",function(event){
-//                            flag = true;
                             setTimeout(function(){
-//                                       flag = false;
                                        }, 50);
                             });
     $("#"+imgId).on("touchend",function(event){
-//                    if(flag==true){
-//                    return;
-//                    }
-//                    RE.canFocus(false);
                     RE.uploadOver(imgId);
                     event.stopPropagation();
                     });
@@ -578,16 +572,16 @@ RE.insertSuccessReplaceImg =function(imgId,imgUrl){
     
     var flag = false;
     window.addEventListener("touchmove",function(event){
-//                            flag = true;
+                            flag = true;
                             setTimeout(function(){
-//                                       flag = false;
+                                       flag = false;
                                        }, 50);
                             });
     $("#"+imgId+"-img").on("touchend",function(event){
-//                           if(flag==true){
-//                           return;
-//                           }
-//                           RE.canFocus(false);
+                           if(flag==true){
+                           return;
+                           }
+                           RE.canFocus(false);
                            RE.uploadOver(imgId);
                            event.stopPropagation();
                            });
@@ -602,16 +596,16 @@ RE.uploadError = function(imgId){
     $("#"+imgId+" .reload-btn").show();
     var flag = false;
     window.addEventListener("touchmove",function(event){
-//                            flag = true;
+                            flag = true;
                             setTimeout(function(){
-//                                       flag = false;
+                                       flag = false;
                                        }, 50);
                             });
     $("#"+imgId).on("touchend",function(event){
-//                    if(flag==true){
-//                    return;
-//                    }
-//                    RE.canFocus(false);
+                    if(flag==true){
+                    return;
+                    }
+                    RE.canFocus(false);
                     RE.uploadOver(imgId);
                     event.stopPropagation();
                     });
