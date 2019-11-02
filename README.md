@@ -1,6 +1,7 @@
 # WGEditor-mobile
 采用系统浏览器做的一款富文本编辑器工具。
 原理就是使用WKWebView加载一个本地的一个html文件，从而达到编辑器功能的效果！
+由于浏览器的一些特性等，富文本编辑器手机端很难做的完美，慢慢完善，欢迎提出好的建议。
 
 ![image](https://github.com/study123456/WGEditor-mobile/blob/master/rextEditor.GIF)   
 
