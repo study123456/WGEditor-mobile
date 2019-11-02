@@ -101,25 +101,25 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setupContentDisable:(BOOL)disable;
 
 
-/***
- * 视频
- */
-- (void)isShowVideo:(NSInteger)show;
-//插入视频封面
-- (void)insetVideoCoverImage:(NSData *)imageData timeString:(NSString *)timeString imageSize:(CGSize)imgSize;
-//删除视频文件封面图
-- (void)deleteVideoImg;
-- (void)updateVideoCoverImage:(NSData *)imageData imageSize:(CGSize)imgSize;
-
-
-/***
- * 视频
- */
-- (void)isShowAudio:(NSInteger)show;
-- (void)insetAudioURL:(NSString *)audioURL;
-- (NSString *)createAudioHtml:(NSString *)audioURL;
-//音频样式调整
-- (void)uploadAudioStatu:(NSInteger)statu percent:(NSInteger)percent;
+///***
+// * 视频
+// */
+//- (void)isShowVideo:(NSInteger)show;
+////插入视频封面
+//- (void)insetVideoCoverImage:(NSData *)imageData timeString:(NSString *)timeString imageSize:(CGSize)imgSize;
+////删除视频文件封面图
+//- (void)deleteVideoImg;
+//- (void)updateVideoCoverImage:(NSData *)imageData imageSize:(CGSize)imgSize;
+//
+//
+///***
+// * 视频
+// */
+//- (void)isShowAudio:(NSInteger)show;
+//- (void)insetAudioURL:(NSString *)audioURL;
+//- (NSString *)createAudioHtml:(NSString *)audioURL;
+////音频样式调整
+//- (void)uploadAudioStatu:(NSInteger)statu percent:(NSInteger)percent;
 
 
 //获取HTML所有
