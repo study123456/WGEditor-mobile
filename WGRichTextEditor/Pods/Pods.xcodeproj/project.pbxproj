@@ -1,0 +1,1040 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05C96452B952A0840E6B425393227B60 /* NSBundle+TZImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B31732970ED3C7DFE9FC3BC3488D88 /* NSBundle+TZImagePicker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		09AD6BB0391C5739CCA4EC552BB8AB5B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E37C866CCF41542C1ED2732702CF56B /* ViewController+MASAdditions.m */; };
+		10134028FA698289F57EECC4749A325B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F873A6256DE5D0ADB029DE66B7C4B4A6 /* MASCompositeConstraint.m */; };
+		1385DA99959010E974D71AAF7779279C /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F59320892E135EE26B2BA2043A4D /* SVIndefiniteAnimatedView.m */; };
+		13DCCE1B6A81E02352F379EA53775D4E /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F24B64F076E202F782F4F5B5B4977FF /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		14B908A538AA438F6A80F623D14C4BF8 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC14DD523347AD74D1572563240342 /* MASLayoutConstraint.m */; };
+		154B63580C5F17CCD08E8CBD85312DC9 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D8ABEF2C8A751A101950D111F0DC5 /* NSArray+MASAdditions.m */; };
+		1972F710818379966161ABF3FF7E6A82 /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE74A98111ADE1457D5CD8F78AD5D55 /* TZAssetModel.m */; };
+		1B309633AD29D140EDCC1DFEB8C7BBE3 /* TZAssetCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4D59C923F244E4E68B9C15DFCC7E68 /* TZAssetCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1C92FC9BF23F390157B8D6BFF6E9DCFE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EEDE8D2354CD80B3095A3CB67479 /* SVProgressHUD.m */; };
+		2488DBB471E511B6087CA47EF88B47DE /* TZLocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3A14981D04A3438A4CB1CEA1B003F9 /* TZLocationManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		28F16D00D0D394469E3338773BB4028D /* TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09166AB09759F2DE4557FBE435D9F944 /* TZLocationManager.m */; };
+		387807E4FF00356E858CABD5CF5DCA52 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216D94D5C304C31EDCE3442B0C374E1 /* SVProgressAnimatedView.m */; };
+		4282A2AF8AB8A3E41EDB0451916DBA59 /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7EBBEA738F00D8EF5807E1AB151D27 /* TZVideoPlayerController.m */; };
+		43CCCB2CA054A9416FF2290D9C9C5DED /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F73AC2D206AC3EADA7BA8CDB2026E6 /* TZImageManager.m */; };
+		447606EE0DF635BF283A5EA73B1330F2 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF801F745737CD5ECCAF557EF84F438 /* MASConstraintMaker.m */; };
+		4661BF5C1AC2099A7E42A0F7020A437A /* TZPhotoPreviewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 17492D33E01927F6DDE5389216B54B00 /* TZPhotoPreviewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4A58CED3E8C6A03E297CEBC1CABD4D27 /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ACF5EEA62E7FC630D6C277C75CB02A /* TZProgressView.m */; };
+		4CDFADB5C201F468837EF83068C93AB5 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 373A0F08D800B952BF789B2F3E69ADF6 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		519420A10DE335E2C2E7649CB90C70C4 /* TZAssetModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4983D6490247EFA229037A36BF7FC069 /* TZAssetModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		65EAF2D2610934CEAF37E905213503EA /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = F16BB41E3CDC5BC49ED64BCBFE9C4EC1 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6704180DEA308DE5AD587941953E603F /* UIView+Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3414700120CE83BDA0223D10278070CC /* UIView+Layout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		69CB5656444B35176968076A4630510F /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 63F9A1D3F73D252A4C6B736344F30BD1 /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6A7E1BA4FD21B9370A7DC90FCB706956 /* TZImagePickerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDEA7708EEC6C577721810D9480B082 /* TZImagePickerController-dummy.m */; };
+		7499C048FC1231700F00A070B824F3BB /* TZImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A4CE2452CD1C3C4116C620711F2194B /* TZImagePickerController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		762900CF583494FF300DBA0CE5867A64 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A07C3C397F217123E8490875916E3C /* SVProgressHUD-dummy.m */; };
+		76EE497A47BAFC8C0AD2886569BD4343 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F3CBAC10AFC6C960F21E6D665F209DF2 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7B00617E3963ACA9AB04DBF38444D961 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EF7D0451EC4E8FAABE312BB2F1DA7D8 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		87354C2430EF2873FBA9F4E18090E599 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FE95341E10F9F846914176611E7DC867 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		876752C27D413A5C2BC86ECBF6F2AE6E /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = B97CDAAEAAE419DF628714F0D5811FDC /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8BED06617EF231772DF4953D2973FC62 /* TZImageCropManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3479B4928160E1AD1AA00711F3610310 /* TZImageCropManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8C12355E8866C8CFD02329A6F6FEBD66 /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0525AA0D6B35E9CEC0CDD2B32862B40 /* TZGifPhotoPreviewController.m */; };
+		90BC5D308D6C837FF7CA65EEF07E5B83 /* TZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E782A69B49A9DA5C269772E2816110 /* TZPhotoPreviewCell.m */; };
+		9246781A7343D80666AF161E9EDFAD04 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7117250C536FCCA3A2606C5261FDF567 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		93A6717571E63E2346F35F3D7276D3C7 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7CFEFB4239E8443F07282F0F43E10 /* UIView+Layout.m */; };
+		9B5600BE66D7AF1B8B11E07F31F27E93 /* TZPhotoPreviewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 86B08EE3CD1DEA6F428563D0A65F620E /* TZPhotoPreviewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		ADFFFFD4C04651B723AA99F6CAFA92D8 /* TZVideoPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = F845D4FA55B26FA91B61AAB4DA483AB5 /* TZVideoPlayerController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AE7AAF0A2EA81270DA4E3674358B882F /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F3D139C493E452F8480344F024367D8 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AF05D2A23EE473E4A67DF014A2594373 /* TZImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C1E764FB082E74A0E677BCF6BD1125BA /* TZImageManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B673F47D68269B925AC8BDEA09845F91 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C287183D185B6404FF68CFE9E899841F /* Masonry-dummy.m */; };
+		B77F79E67D38EA6509BA080F0B27D31D /* Pods-WGRichTextEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9067B09CE3478C5F20A2ED5E1D2ED9AC /* Pods-WGRichTextEditor-dummy.m */; };
+		B828BB0D3567DE0853A18CDC67BACD56 /* TZPhotoPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7279091B476006C04F85FEECE6226D14 /* TZPhotoPickerController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B88CBF34C2629EE4936622D849352DE6 /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B7696DBC004C891AAEF8B608BBA459 /* TZImagePickerController.m */; };
+		B96EA72AA82B01E2DE37D4A978AF63FF /* TZGifPhotoPreviewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E3C166C9C5D068A871A3E74DFE8D9FD /* TZGifPhotoPreviewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B98D6CA95835AE75238838D5B3362183 /* TZProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 862F4BC2FE0DA78037F119EB9736239E /* TZProgressView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BC9862119C94E9AB484A3E5367B9AE5D /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5BB1FB2CF13C27EA74E5DA01526C89 /* NSBundle+TZImagePicker.m */; };
+		CAD6C643D28410CE08DCE94DFCCF7D85 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F8A89A3AD12378289FEECA0237A858 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CB646A03793C0D2A9E8D6DDF0C8E6CB4 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F6500938A39EB48C3397A7D2614CC57 /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CBB167A80E750EFFE3E2ECF10B1C9798 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B9D2DA5CBFC99E4CF0FAE724A8B9A2CF /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D1C79BE498BA60AEB18E823E256A5B80 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AC0BD745638C93939AC4F1DDBD9FD23 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D5E2485E6F861BB721F74FDB71331210 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E4E85C339A6FC92D15882BFE4BBF076 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D954E6C12497D0DB560D2BA38B32172C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDD11621564D83E4815551E7776B63F /* View+MASAdditions.m */; };
+		E29C6E72B5D08B8792F9CC60B0AF396E /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7136FA586A3AC6B96FB81E64CA5642BE /* TZAssetCell.m */; };
+		E590030D75775C8770F416ED09932B4A /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EDF3928DBFFD69774A5EE78FA042B5 /* MASConstraint.m */; };
+		E9C328B0D2058F404A8EE41546EAE098 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 51010A1247432AE6E31B23B0103042C5 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EA129BB1118372CAB92C56AF271424D3 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F27BADB30E0A0115A827D6A41D22316D /* MASViewConstraint.m */; };
+		ED9D56A1F15C2F98DE42B0CDB3702783 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45095FC1037C68763EB8D5C74FBA0E /* MASViewAttribute.m */; };
+		EF694F3D29D41CA052FB6D02E9CC2581 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = A727E7A7D7027E98E0D07BD72093033F /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F2FD5B0BBF809098DCB054A4CD6E209C /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7F43A444F764E3B4E916028CB2C20B /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F36082F450252B903FAA20EC1548D92A /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 880CF5F286241ECBFE96647D3CD8782E /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F62A1DFD6436DE3A263801A192E9B5DD /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C25889E4F8AD5B78211D6E1F89704664 /* SVRadialGradientLayer.m */; };
+		F702E0164CAC62061DC13144B90C8FB0 /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5189F9E1C04768C78CA47C05813E18F /* TZPhotoPreviewController.m */; };
+		F72EAFC0A34800E272312A6CC70104AC /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1076788578AE50E8EFD655428FFAAE /* TZImageCropManager.m */; };
+		F8C7E4DAA46388F6693AEB179484A4C2 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = DF6DB42880FCE42B5008DD9BF4A52196 /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FC5E8744B80332E8A1881EBE9A8039EE /* TZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9114E2FC99C93B5A4715ADD7A38985 /* TZPhotoPickerController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2365D0A07C6FA524E048F2DF6C31D591 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18C466E33612EF2273AC8795D2AF672C;
+			remoteInfo = SVProgressHUD;
+		};
+		C638371D505F5C99C33FCC11A688C87C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E62CAA4010E6BDEB881FB709E40E9DA5;
+			remoteInfo = Masonry;
+		};
+		E55FA5F5B5AE823B61468358F0E371C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6454D65D427795CFEC34652C2A600F9;
+			remoteInfo = TZImagePickerController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01E782A69B49A9DA5C269772E2816110 /* TZPhotoPreviewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZPhotoPreviewCell.m; path = TZImagePickerController/TZImagePickerController/TZPhotoPreviewCell.m; sourceTree = "<group>"; };
+		05D824941596F3C5C24D62C4F9DB0033 /* libTZImagePickerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTZImagePickerController.a; path = libTZImagePickerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		08EDF3928DBFFD69774A5EE78FA042B5 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		09166AB09759F2DE4557FBE435D9F944 /* TZLocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZLocationManager.m; path = TZImagePickerController/TZImagePickerController/TZLocationManager.m; sourceTree = "<group>"; };
+		0B7F43A444F764E3B4E916028CB2C20B /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		0BE74A98111ADE1457D5CD8F78AD5D55 /* TZAssetModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZAssetModel.m; path = TZImagePickerController/TZImagePickerController/TZAssetModel.m; sourceTree = "<group>"; };
+		0E37C866CCF41542C1ED2732702CF56B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		0F24B64F076E202F782F4F5B5B4977FF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		0F3D139C493E452F8480344F024367D8 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		0F6500938A39EB48C3397A7D2614CC57 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		10D1C8D7C7CC1AD8BDEB90E54549131C /* Pods-WGRichTextEditor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WGRichTextEditor-acknowledgements.markdown"; sourceTree = "<group>"; };
+		17492D33E01927F6DDE5389216B54B00 /* TZPhotoPreviewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZPhotoPreviewController.h; path = TZImagePickerController/TZImagePickerController/TZPhotoPreviewController.h; sourceTree = "<group>"; };
+		1D45095FC1037C68763EB8D5C74FBA0E /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		2A1E6D382513F78C106EF8A3B949B8CD /* Pods-WGRichTextEditor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WGRichTextEditor-acknowledgements.plist"; sourceTree = "<group>"; };
+		2CA7CFEFB4239E8443F07282F0F43E10 /* UIView+Layout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Layout.m"; path = "TZImagePickerController/TZImagePickerController/UIView+Layout.m"; sourceTree = "<group>"; };
+		2E3C166C9C5D068A871A3E74DFE8D9FD /* TZGifPhotoPreviewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZGifPhotoPreviewController.h; path = TZImagePickerController/TZImagePickerController/TZGifPhotoPreviewController.h; sourceTree = "<group>"; };
+		2EC4B3D55FE5DC259355234EBACED340 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		3414700120CE83BDA0223D10278070CC /* UIView+Layout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Layout.h"; path = "TZImagePickerController/TZImagePickerController/UIView+Layout.h"; sourceTree = "<group>"; };
+		3479B4928160E1AD1AA00711F3610310 /* TZImageCropManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZImageCropManager.h; path = TZImagePickerController/TZImagePickerController/TZImageCropManager.h; sourceTree = "<group>"; };
+		373A0F08D800B952BF789B2F3E69ADF6 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		4216D94D5C304C31EDCE3442B0C374E1 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		46405B854750499AD4B7BA457CECEC6D /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4983D6490247EFA229037A36BF7FC069 /* TZAssetModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZAssetModel.h; path = TZImagePickerController/TZImagePickerController/TZAssetModel.h; sourceTree = "<group>"; };
+		4A4CE2452CD1C3C4116C620711F2194B /* TZImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZImagePickerController.h; path = TZImagePickerController/TZImagePickerController/TZImagePickerController.h; sourceTree = "<group>"; };
+		4D5BB1FB2CF13C27EA74E5DA01526C89 /* NSBundle+TZImagePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+TZImagePicker.m"; path = "TZImagePickerController/TZImagePickerController/NSBundle+TZImagePicker.m"; sourceTree = "<group>"; };
+		51010A1247432AE6E31B23B0103042C5 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		5148EA88A1B6424B5637CCFAA506B39B /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSVProgressHUD.a; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		538D8ABEF2C8A751A101950D111F0DC5 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		63F9A1D3F73D252A4C6B736344F30BD1 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		6987BDDAEA39BCFCCF9EE84708DD38B7 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		6A7EBBEA738F00D8EF5807E1AB151D27 /* TZVideoPlayerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZVideoPlayerController.m; path = TZImagePickerController/TZImagePickerController/TZVideoPlayerController.m; sourceTree = "<group>"; };
+		6BFB17DDC86D8FFE7840CBAEF31036B9 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		6EF7D0451EC4E8FAABE312BB2F1DA7D8 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		7117250C536FCCA3A2606C5261FDF567 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		7136FA586A3AC6B96FB81E64CA5642BE /* TZAssetCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZAssetCell.m; path = TZImagePickerController/TZImagePickerController/TZAssetCell.m; sourceTree = "<group>"; };
+		715B1784F89D8F8CD71C72C6878BC81B /* TZImagePickerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TZImagePickerController-prefix.pch"; sourceTree = "<group>"; };
+		71ACF5EEA62E7FC630D6C277C75CB02A /* TZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZProgressView.m; path = TZImagePickerController/TZImagePickerController/TZProgressView.m; sourceTree = "<group>"; };
+		7279091B476006C04F85FEECE6226D14 /* TZPhotoPickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZPhotoPickerController.h; path = TZImagePickerController/TZImagePickerController/TZPhotoPickerController.h; sourceTree = "<group>"; };
+		7E4E85C339A6FC92D15882BFE4BBF076 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		7EF801F745737CD5ECCAF557EF84F438 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		80A07C3C397F217123E8490875916E3C /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		862F4BC2FE0DA78037F119EB9736239E /* TZProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZProgressView.h; path = TZImagePickerController/TZImagePickerController/TZProgressView.h; sourceTree = "<group>"; };
+		86B08EE3CD1DEA6F428563D0A65F620E /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZPhotoPreviewCell.h; path = TZImagePickerController/TZImagePickerController/TZPhotoPreviewCell.h; sourceTree = "<group>"; };
+		880CF5F286241ECBFE96647D3CD8782E /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		8868EEDE8D2354CD80B3095A3CB67479 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		89F73AC2D206AC3EADA7BA8CDB2026E6 /* TZImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZImageManager.m; path = TZImagePickerController/TZImagePickerController/TZImageManager.m; sourceTree = "<group>"; };
+		9067B09CE3478C5F20A2ED5E1D2ED9AC /* Pods-WGRichTextEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WGRichTextEditor-dummy.m"; sourceTree = "<group>"; };
+		94FC14DD523347AD74D1572563240342 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		9AC0BD745638C93939AC4F1DDBD9FD23 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		9BC41A8FCD117E532CBDE465AF86A96D /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		9CDEA7708EEC6C577721810D9480B082 /* TZImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TZImagePickerController-dummy.m"; sourceTree = "<group>"; };
+		9F3A14981D04A3438A4CB1CEA1B003F9 /* TZLocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZLocationManager.h; path = TZImagePickerController/TZImagePickerController/TZLocationManager.h; sourceTree = "<group>"; };
+		A4B31732970ED3C7DFE9FC3BC3488D88 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+TZImagePicker.h"; path = "TZImagePickerController/TZImagePickerController/NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
+		A61AB58F64A3BF534F12502FC7739352 /* TZImagePickerController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TZImagePickerController.bundle; path = TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle; sourceTree = "<group>"; };
+		A727E7A7D7027E98E0D07BD72093033F /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		AC4D59C923F244E4E68B9C15DFCC7E68 /* TZAssetCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZAssetCell.h; path = TZImagePickerController/TZImagePickerController/TZAssetCell.h; sourceTree = "<group>"; };
+		AD1076788578AE50E8EFD655428FFAAE /* TZImageCropManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZImageCropManager.m; path = TZImagePickerController/TZImagePickerController/TZImageCropManager.m; sourceTree = "<group>"; };
+		ADC6F59320892E135EE26B2BA2043A4D /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B5189F9E1C04768C78CA47C05813E18F /* TZPhotoPreviewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZPhotoPreviewController.m; path = TZImagePickerController/TZImagePickerController/TZPhotoPreviewController.m; sourceTree = "<group>"; };
+		B70EF193BD00A529C8A26790AADD5A39 /* libPods-WGRichTextEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WGRichTextEditor.a"; path = "libPods-WGRichTextEditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B97CDAAEAAE419DF628714F0D5811FDC /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		B9D2DA5CBFC99E4CF0FAE724A8B9A2CF /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		BB9114E2FC99C93B5A4715ADD7A38985 /* TZPhotoPickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZPhotoPickerController.m; path = TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m; sourceTree = "<group>"; };
+		C1E764FB082E74A0E677BCF6BD1125BA /* TZImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZImageManager.h; path = TZImagePickerController/TZImagePickerController/TZImageManager.h; sourceTree = "<group>"; };
+		C25889E4F8AD5B78211D6E1F89704664 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		C287183D185B6404FF68CFE9E899841F /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		CC9CF202A14253D3DB8DEF7E7B469C4F /* Pods-WGRichTextEditor-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WGRichTextEditor-resources.sh"; sourceTree = "<group>"; };
+		CFBCE092C6EA4E2ED7CF4C2CD696DAC6 /* Pods-WGRichTextEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGRichTextEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		D9F8A89A3AD12378289FEECA0237A858 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		DB1AB0ACFA89F3B45BF1D83E481B9EF8 /* Pods-WGRichTextEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WGRichTextEditor.release.xcconfig"; sourceTree = "<group>"; };
+		DF6DB42880FCE42B5008DD9BF4A52196 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		E8B7696DBC004C891AAEF8B608BBA459 /* TZImagePickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZImagePickerController.m; path = TZImagePickerController/TZImagePickerController/TZImagePickerController.m; sourceTree = "<group>"; };
+		EEDD11621564D83E4815551E7776B63F /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		F0525AA0D6B35E9CEC0CDD2B32862B40 /* TZGifPhotoPreviewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZGifPhotoPreviewController.m; path = TZImagePickerController/TZImagePickerController/TZGifPhotoPreviewController.m; sourceTree = "<group>"; };
+		F16BB41E3CDC5BC49ED64BCBFE9C4EC1 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		F27BADB30E0A0115A827D6A41D22316D /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		F3CBAC10AFC6C960F21E6D665F209DF2 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		F4A9155D8896E33DE8EAEC6801CE5A28 /* TZImagePickerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TZImagePickerController.xcconfig; sourceTree = "<group>"; };
+		F845D4FA55B26FA91B61AAB4DA483AB5 /* TZVideoPlayerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZVideoPlayerController.h; path = TZImagePickerController/TZImagePickerController/TZVideoPlayerController.h; sourceTree = "<group>"; };
+		F873A6256DE5D0ADB029DE66B7C4B4A6 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		F8B6027D0E9D09E16CA2C694313E6117 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		FE95341E10F9F846914176611E7DC867 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0ECD751095105B5C026887277AF59AC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B17EDA05947EC99F0B4D20E647D0156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AFFE05AACDCEE1867C38124ED387485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE6659AE8FA8ED130B0AAF4886FDF25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F4AD537A25C66CBCCB3EF283D1365D1 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				0F24B64F076E202F782F4F5B5B4977FF /* MASCompositeConstraint.h */,
+				F873A6256DE5D0ADB029DE66B7C4B4A6 /* MASCompositeConstraint.m */,
+				0F6500938A39EB48C3397A7D2614CC57 /* MASConstraint.h */,
+				08EDF3928DBFFD69774A5EE78FA042B5 /* MASConstraint.m */,
+				7E4E85C339A6FC92D15882BFE4BBF076 /* MASConstraint+Private.h */,
+				51010A1247432AE6E31B23B0103042C5 /* MASConstraintMaker.h */,
+				7EF801F745737CD5ECCAF557EF84F438 /* MASConstraintMaker.m */,
+				A727E7A7D7027E98E0D07BD72093033F /* MASLayoutConstraint.h */,
+				94FC14DD523347AD74D1572563240342 /* MASLayoutConstraint.m */,
+				DF6DB42880FCE42B5008DD9BF4A52196 /* Masonry.h */,
+				63F9A1D3F73D252A4C6B736344F30BD1 /* MASUtilities.h */,
+				B97CDAAEAAE419DF628714F0D5811FDC /* MASViewAttribute.h */,
+				1D45095FC1037C68763EB8D5C74FBA0E /* MASViewAttribute.m */,
+				F16BB41E3CDC5BC49ED64BCBFE9C4EC1 /* MASViewConstraint.h */,
+				F27BADB30E0A0115A827D6A41D22316D /* MASViewConstraint.m */,
+				B9D2DA5CBFC99E4CF0FAE724A8B9A2CF /* NSArray+MASAdditions.h */,
+				538D8ABEF2C8A751A101950D111F0DC5 /* NSArray+MASAdditions.m */,
+				F3CBAC10AFC6C960F21E6D665F209DF2 /* NSArray+MASShorthandAdditions.h */,
+				6EF7D0451EC4E8FAABE312BB2F1DA7D8 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				FE95341E10F9F846914176611E7DC867 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				373A0F08D800B952BF789B2F3E69ADF6 /* View+MASAdditions.h */,
+				EEDD11621564D83E4815551E7776B63F /* View+MASAdditions.m */,
+				880CF5F286241ECBFE96647D3CD8782E /* View+MASShorthandAdditions.h */,
+				D9F8A89A3AD12378289FEECA0237A858 /* ViewController+MASAdditions.h */,
+				0E37C866CCF41542C1ED2732702CF56B /* ViewController+MASAdditions.m */,
+				E8122D265B661323EF206759C02F2192 /* Support Files */,
+			);
+			name = Masonry;
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		110CA8DBD84C26155ACF47B8E2EA1D98 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A61AB58F64A3BF534F12502FC7739352 /* TZImagePickerController.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		31CFFA919849254BC36DF86AD407B813 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6BFB17DDC86D8FFE7840CBAEF31036B9 /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6A856C6C5ADB1F4E212A50F43F1C05F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46405B854750499AD4B7BA457CECEC6D /* libMasonry.a */,
+				B70EF193BD00A529C8A26790AADD5A39 /* libPods-WGRichTextEditor.a */,
+				5148EA88A1B6424B5637CCFAA506B39B /* libSVProgressHUD.a */,
+				05D824941596F3C5C24D62C4F9DB0033 /* libTZImagePickerController.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				F92866DC8446266AE01217E8C073ACEC /* Pods */,
+				6A856C6C5ADB1F4E212A50F43F1C05F8 /* Products */,
+				F74A1BF99BBF94F68B0FF823D14CF309 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7EA65B1295771EA359E0545EE5012093 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4A9155D8896E33DE8EAEC6801CE5A28 /* TZImagePickerController.xcconfig */,
+				9CDEA7708EEC6C577721810D9480B082 /* TZImagePickerController-dummy.m */,
+				715B1784F89D8F8CD71C72C6878BC81B /* TZImagePickerController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TZImagePickerController";
+			sourceTree = "<group>";
+		};
+		A1C13E497DD65B8A580A316B8FFF9C5E /* Pods-WGRichTextEditor */ = {
+			isa = PBXGroup;
+			children = (
+				10D1C8D7C7CC1AD8BDEB90E54549131C /* Pods-WGRichTextEditor-acknowledgements.markdown */,
+				2A1E6D382513F78C106EF8A3B949B8CD /* Pods-WGRichTextEditor-acknowledgements.plist */,
+				9067B09CE3478C5F20A2ED5E1D2ED9AC /* Pods-WGRichTextEditor-dummy.m */,
+				CC9CF202A14253D3DB8DEF7E7B469C4F /* Pods-WGRichTextEditor-resources.sh */,
+				CFBCE092C6EA4E2ED7CF4C2CD696DAC6 /* Pods-WGRichTextEditor.debug.xcconfig */,
+				DB1AB0ACFA89F3B45BF1D83E481B9EF8 /* Pods-WGRichTextEditor.release.xcconfig */,
+			);
+			name = "Pods-WGRichTextEditor";
+			path = "Target Support Files/Pods-WGRichTextEditor";
+			sourceTree = "<group>";
+		};
+		A88AF8790BA3CB9A75719C6302080566 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8B6027D0E9D09E16CA2C694313E6117 /* SVProgressHUD.xcconfig */,
+				80A07C3C397F217123E8490875916E3C /* SVProgressHUD-dummy.m */,
+				6987BDDAEA39BCFCCF9EE84708DD38B7 /* SVProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		B6723813AAE9637D4D45BB0EFC71A189 /* TZImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				A4B31732970ED3C7DFE9FC3BC3488D88 /* NSBundle+TZImagePicker.h */,
+				4D5BB1FB2CF13C27EA74E5DA01526C89 /* NSBundle+TZImagePicker.m */,
+				AC4D59C923F244E4E68B9C15DFCC7E68 /* TZAssetCell.h */,
+				7136FA586A3AC6B96FB81E64CA5642BE /* TZAssetCell.m */,
+				4983D6490247EFA229037A36BF7FC069 /* TZAssetModel.h */,
+				0BE74A98111ADE1457D5CD8F78AD5D55 /* TZAssetModel.m */,
+				2E3C166C9C5D068A871A3E74DFE8D9FD /* TZGifPhotoPreviewController.h */,
+				F0525AA0D6B35E9CEC0CDD2B32862B40 /* TZGifPhotoPreviewController.m */,
+				3479B4928160E1AD1AA00711F3610310 /* TZImageCropManager.h */,
+				AD1076788578AE50E8EFD655428FFAAE /* TZImageCropManager.m */,
+				C1E764FB082E74A0E677BCF6BD1125BA /* TZImageManager.h */,
+				89F73AC2D206AC3EADA7BA8CDB2026E6 /* TZImageManager.m */,
+				4A4CE2452CD1C3C4116C620711F2194B /* TZImagePickerController.h */,
+				E8B7696DBC004C891AAEF8B608BBA459 /* TZImagePickerController.m */,
+				9F3A14981D04A3438A4CB1CEA1B003F9 /* TZLocationManager.h */,
+				09166AB09759F2DE4557FBE435D9F944 /* TZLocationManager.m */,
+				7279091B476006C04F85FEECE6226D14 /* TZPhotoPickerController.h */,
+				BB9114E2FC99C93B5A4715ADD7A38985 /* TZPhotoPickerController.m */,
+				86B08EE3CD1DEA6F428563D0A65F620E /* TZPhotoPreviewCell.h */,
+				01E782A69B49A9DA5C269772E2816110 /* TZPhotoPreviewCell.m */,
+				17492D33E01927F6DDE5389216B54B00 /* TZPhotoPreviewController.h */,
+				B5189F9E1C04768C78CA47C05813E18F /* TZPhotoPreviewController.m */,
+				862F4BC2FE0DA78037F119EB9736239E /* TZProgressView.h */,
+				71ACF5EEA62E7FC630D6C277C75CB02A /* TZProgressView.m */,
+				F845D4FA55B26FA91B61AAB4DA483AB5 /* TZVideoPlayerController.h */,
+				6A7EBBEA738F00D8EF5807E1AB151D27 /* TZVideoPlayerController.m */,
+				3414700120CE83BDA0223D10278070CC /* UIView+Layout.h */,
+				2CA7CFEFB4239E8443F07282F0F43E10 /* UIView+Layout.m */,
+				110CA8DBD84C26155ACF47B8E2EA1D98 /* Resources */,
+				7EA65B1295771EA359E0545EE5012093 /* Support Files */,
+			);
+			name = TZImagePickerController;
+			path = TZImagePickerController;
+			sourceTree = "<group>";
+		};
+		BFB2BDC0FDB763C48929D963641F6406 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0F3D139C493E452F8480344F024367D8 /* SVIndefiniteAnimatedView.h */,
+				ADC6F59320892E135EE26B2BA2043A4D /* SVIndefiniteAnimatedView.m */,
+				0B7F43A444F764E3B4E916028CB2C20B /* SVProgressAnimatedView.h */,
+				4216D94D5C304C31EDCE3442B0C374E1 /* SVProgressAnimatedView.m */,
+				9AC0BD745638C93939AC4F1DDBD9FD23 /* SVProgressHUD.h */,
+				8868EEDE8D2354CD80B3095A3CB67479 /* SVProgressHUD.m */,
+				7117250C536FCCA3A2606C5261FDF567 /* SVRadialGradientLayer.h */,
+				C25889E4F8AD5B78211D6E1F89704664 /* SVRadialGradientLayer.m */,
+				31CFFA919849254BC36DF86AD407B813 /* Resources */,
+				A88AF8790BA3CB9A75719C6302080566 /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		E8122D265B661323EF206759C02F2192 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EC4B3D55FE5DC259355234EBACED340 /* Masonry.xcconfig */,
+				C287183D185B6404FF68CFE9E899841F /* Masonry-dummy.m */,
+				9BC41A8FCD117E532CBDE465AF86A96D /* Masonry-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
+		F74A1BF99BBF94F68B0FF823D14CF309 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1C13E497DD65B8A580A316B8FFF9C5E /* Pods-WGRichTextEditor */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F92866DC8446266AE01217E8C073ACEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F4AD537A25C66CBCCB3EF283D1365D1 /* Masonry */,
+				BFB2BDC0FDB763C48929D963641F6406 /* SVProgressHUD */,
+				B6723813AAE9637D4D45BB0EFC71A189 /* TZImagePickerController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9529B8C81464A41C31729F9E487A6F09 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13DCCE1B6A81E02352F379EA53775D4E /* MASCompositeConstraint.h in Headers */,
+				D5E2485E6F861BB721F74FDB71331210 /* MASConstraint+Private.h in Headers */,
+				CB646A03793C0D2A9E8D6DDF0C8E6CB4 /* MASConstraint.h in Headers */,
+				E9C328B0D2058F404A8EE41546EAE098 /* MASConstraintMaker.h in Headers */,
+				EF694F3D29D41CA052FB6D02E9CC2581 /* MASLayoutConstraint.h in Headers */,
+				F8C7E4DAA46388F6693AEB179484A4C2 /* Masonry.h in Headers */,
+				69CB5656444B35176968076A4630510F /* MASUtilities.h in Headers */,
+				876752C27D413A5C2BC86ECBF6F2AE6E /* MASViewAttribute.h in Headers */,
+				65EAF2D2610934CEAF37E905213503EA /* MASViewConstraint.h in Headers */,
+				CBB167A80E750EFFE3E2ECF10B1C9798 /* NSArray+MASAdditions.h in Headers */,
+				76EE497A47BAFC8C0AD2886569BD4343 /* NSArray+MASShorthandAdditions.h in Headers */,
+				7B00617E3963ACA9AB04DBF38444D961 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				4CDFADB5C201F468837EF83068C93AB5 /* View+MASAdditions.h in Headers */,
+				F36082F450252B903FAA20EC1548D92A /* View+MASShorthandAdditions.h in Headers */,
+				CAD6C643D28410CE08DCE94DFCCF7D85 /* ViewController+MASAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B19DFC7128BCE365D73B0329A2AC049D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C96452B952A0840E6B425393227B60 /* NSBundle+TZImagePicker.h in Headers */,
+				1B309633AD29D140EDCC1DFEB8C7BBE3 /* TZAssetCell.h in Headers */,
+				519420A10DE335E2C2E7649CB90C70C4 /* TZAssetModel.h in Headers */,
+				B96EA72AA82B01E2DE37D4A978AF63FF /* TZGifPhotoPreviewController.h in Headers */,
+				8BED06617EF231772DF4953D2973FC62 /* TZImageCropManager.h in Headers */,
+				AF05D2A23EE473E4A67DF014A2594373 /* TZImageManager.h in Headers */,
+				7499C048FC1231700F00A070B824F3BB /* TZImagePickerController.h in Headers */,
+				2488DBB471E511B6087CA47EF88B47DE /* TZLocationManager.h in Headers */,
+				B828BB0D3567DE0853A18CDC67BACD56 /* TZPhotoPickerController.h in Headers */,
+				9B5600BE66D7AF1B8B11E07F31F27E93 /* TZPhotoPreviewCell.h in Headers */,
+				4661BF5C1AC2099A7E42A0F7020A437A /* TZPhotoPreviewController.h in Headers */,
+				B98D6CA95835AE75238838D5B3362183 /* TZProgressView.h in Headers */,
+				ADFFFFD4C04651B723AA99F6CAFA92D8 /* TZVideoPlayerController.h in Headers */,
+				6704180DEA308DE5AD587941953E603F /* UIView+Layout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0B41CA232ACC382EA590EBF8CE2E874 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E435C3AA39264D20B6B31B4BC1699B40 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE7AAF0A2EA81270DA4E3674358B882F /* SVIndefiniteAnimatedView.h in Headers */,
+				F2FD5B0BBF809098DCB054A4CD6E209C /* SVProgressAnimatedView.h in Headers */,
+				D1C79BE498BA60AEB18E823E256A5B80 /* SVProgressHUD.h in Headers */,
+				9246781A7343D80666AF161E9EDFAD04 /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		18C466E33612EF2273AC8795D2AF672C /* SVProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23E00266BDA529F352ED13FC7E34AA22 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildPhases = (
+				E435C3AA39264D20B6B31B4BC1699B40 /* Headers */,
+				B58A7D9BD4A9606B3D620CA029B61C4B /* Sources */,
+				2B17EDA05947EC99F0B4D20E647D0156 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = 5148EA88A1B6424B5637CCFAA506B39B /* libSVProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		67C6D1C1421C0EC13C6D2ED0978DDA9E /* Pods-WGRichTextEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 391C22E9B8D1DD53BAA4AD9F00DF5D8F /* Build configuration list for PBXNativeTarget "Pods-WGRichTextEditor" */;
+			buildPhases = (
+				E0B41CA232ACC382EA590EBF8CE2E874 /* Headers */,
+				0EE8CFA36C521331471AC5CD0F020283 /* Sources */,
+				8AFFE05AACDCEE1867C38124ED387485 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B06C11E6EC3DCABC9FEA7F385D1D29A6 /* PBXTargetDependency */,
+				52D78902019DA2630111065F07E73865 /* PBXTargetDependency */,
+				ECF68F941C679F24B2CF6890A68429CF /* PBXTargetDependency */,
+			);
+			name = "Pods-WGRichTextEditor";
+			productName = "Pods-WGRichTextEditor";
+			productReference = B70EF193BD00A529C8A26790AADD5A39 /* libPods-WGRichTextEditor.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B6454D65D427795CFEC34652C2A600F9 /* TZImagePickerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99C581A98FC0CF53FABD84823AFEEB0E /* Build configuration list for PBXNativeTarget "TZImagePickerController" */;
+			buildPhases = (
+				B19DFC7128BCE365D73B0329A2AC049D /* Headers */,
+				59F92FD5C833E3E27F923870FC839BA5 /* Sources */,
+				FCE6659AE8FA8ED130B0AAF4886FDF25 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TZImagePickerController;
+			productName = TZImagePickerController;
+			productReference = 05D824941596F3C5C24D62C4F9DB0033 /* libTZImagePickerController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E62CAA4010E6BDEB881FB709E40E9DA5 /* Masonry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 420E3EE43CC1A350A2EBA09ABC5E762A /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildPhases = (
+				9529B8C81464A41C31729F9E487A6F09 /* Headers */,
+				575477C542A5A91B7CFBA604D813CD2D /* Sources */,
+				0ECD751095105B5C026887277AF59AC8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Masonry;
+			productName = Masonry;
+			productReference = 46405B854750499AD4B7BA457CECEC6D /* libMasonry.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6A856C6C5ADB1F4E212A50F43F1C05F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E62CAA4010E6BDEB881FB709E40E9DA5 /* Masonry */,
+				67C6D1C1421C0EC13C6D2ED0978DDA9E /* Pods-WGRichTextEditor */,
+				18C466E33612EF2273AC8795D2AF672C /* SVProgressHUD */,
+				B6454D65D427795CFEC34652C2A600F9 /* TZImagePickerController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0EE8CFA36C521331471AC5CD0F020283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B77F79E67D38EA6509BA080F0B27D31D /* Pods-WGRichTextEditor-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		575477C542A5A91B7CFBA604D813CD2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10134028FA698289F57EECC4749A325B /* MASCompositeConstraint.m in Sources */,
+				E590030D75775C8770F416ED09932B4A /* MASConstraint.m in Sources */,
+				447606EE0DF635BF283A5EA73B1330F2 /* MASConstraintMaker.m in Sources */,
+				14B908A538AA438F6A80F623D14C4BF8 /* MASLayoutConstraint.m in Sources */,
+				B673F47D68269B925AC8BDEA09845F91 /* Masonry-dummy.m in Sources */,
+				ED9D56A1F15C2F98DE42B0CDB3702783 /* MASViewAttribute.m in Sources */,
+				EA129BB1118372CAB92C56AF271424D3 /* MASViewConstraint.m in Sources */,
+				154B63580C5F17CCD08E8CBD85312DC9 /* NSArray+MASAdditions.m in Sources */,
+				87354C2430EF2873FBA9F4E18090E599 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				D954E6C12497D0DB560D2BA38B32172C /* View+MASAdditions.m in Sources */,
+				09AD6BB0391C5739CCA4EC552BB8AB5B /* ViewController+MASAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F92FD5C833E3E27F923870FC839BA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC9862119C94E9AB484A3E5367B9AE5D /* NSBundle+TZImagePicker.m in Sources */,
+				E29C6E72B5D08B8792F9CC60B0AF396E /* TZAssetCell.m in Sources */,
+				1972F710818379966161ABF3FF7E6A82 /* TZAssetModel.m in Sources */,
+				8C12355E8866C8CFD02329A6F6FEBD66 /* TZGifPhotoPreviewController.m in Sources */,
+				F72EAFC0A34800E272312A6CC70104AC /* TZImageCropManager.m in Sources */,
+				43CCCB2CA054A9416FF2290D9C9C5DED /* TZImageManager.m in Sources */,
+				6A7E1BA4FD21B9370A7DC90FCB706956 /* TZImagePickerController-dummy.m in Sources */,
+				B88CBF34C2629EE4936622D849352DE6 /* TZImagePickerController.m in Sources */,
+				28F16D00D0D394469E3338773BB4028D /* TZLocationManager.m in Sources */,
+				FC5E8744B80332E8A1881EBE9A8039EE /* TZPhotoPickerController.m in Sources */,
+				90BC5D308D6C837FF7CA65EEF07E5B83 /* TZPhotoPreviewCell.m in Sources */,
+				F702E0164CAC62061DC13144B90C8FB0 /* TZPhotoPreviewController.m in Sources */,
+				4A58CED3E8C6A03E297CEBC1CABD4D27 /* TZProgressView.m in Sources */,
+				4282A2AF8AB8A3E41EDB0451916DBA59 /* TZVideoPlayerController.m in Sources */,
+				93A6717571E63E2346F35F3D7276D3C7 /* UIView+Layout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B58A7D9BD4A9606B3D620CA029B61C4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1385DA99959010E974D71AAF7779279C /* SVIndefiniteAnimatedView.m in Sources */,
+				387807E4FF00356E858CABD5CF5DCA52 /* SVProgressAnimatedView.m in Sources */,
+				762900CF583494FF300DBA0CE5867A64 /* SVProgressHUD-dummy.m in Sources */,
+				1C92FC9BF23F390157B8D6BFF6E9DCFE /* SVProgressHUD.m in Sources */,
+				F62A1DFD6436DE3A263801A192E9B5DD /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52D78902019DA2630111065F07E73865 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 18C466E33612EF2273AC8795D2AF672C /* SVProgressHUD */;
+			targetProxy = 2365D0A07C6FA524E048F2DF6C31D591 /* PBXContainerItemProxy */;
+		};
+		B06C11E6EC3DCABC9FEA7F385D1D29A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = E62CAA4010E6BDEB881FB709E40E9DA5 /* Masonry */;
+			targetProxy = C638371D505F5C99C33FCC11A688C87C /* PBXContainerItemProxy */;
+		};
+		ECF68F941C679F24B2CF6890A68429CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TZImagePickerController;
+			target = B6454D65D427795CFEC34652C2A600F9 /* TZImagePickerController */;
+			targetProxy = E55FA5F5B5AE823B61468358F0E371C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		073B59383983232F8EF45CFCDD2E78B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8B6027D0E9D09E16CA2C694313E6117 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B48D41A834D6B2E4EE254DED520099B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EC4B3D55FE5DC259355234EBACED340 /* Masonry.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E4862B51B002880AAF1C3675BA7C3DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2F305EB77339508BAEFAE0BF2B20CA2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB1AB0ACFA89F3B45BF1D83E481B9EF8 /* Pods-WGRichTextEditor.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B115A89B2D231B68B0DE58E323C89D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EC4B3D55FE5DC259355234EBACED340 /* Masonry.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		687AD918AC56FD22EC1285E98BAC9085 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A9155D8896E33DE8EAEC6801CE5A28 /* TZImagePickerController.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/TZImagePickerController/TZImagePickerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = TZImagePickerController;
+				PRODUCT_NAME = TZImagePickerController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A106045A76089DDF3D57084904357E27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BDC98E648CD7C7152F6F16E5DD4A5BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFBCE092C6EA4E2ED7CF4C2CD696DAC6 /* Pods-WGRichTextEditor.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D54262B484F177B88A261BB0BFB65A81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A9155D8896E33DE8EAEC6801CE5A28 /* TZImagePickerController.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/TZImagePickerController/TZImagePickerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = TZImagePickerController;
+				PRODUCT_NAME = TZImagePickerController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE9BF6DDF7F24BEABDC9B106691F9010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8B6027D0E9D09E16CA2C694313E6117 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23E00266BDA529F352ED13FC7E34AA22 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE9BF6DDF7F24BEABDC9B106691F9010 /* Debug */,
+				073B59383983232F8EF45CFCDD2E78B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A106045A76089DDF3D57084904357E27 /* Debug */,
+				2E4862B51B002880AAF1C3675BA7C3DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		391C22E9B8D1DD53BAA4AD9F00DF5D8F /* Build configuration list for PBXNativeTarget "Pods-WGRichTextEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC98E648CD7C7152F6F16E5DD4A5BE4 /* Debug */,
+				2F305EB77339508BAEFAE0BF2B20CA2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		420E3EE43CC1A350A2EBA09ABC5E762A /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B115A89B2D231B68B0DE58E323C89D3 /* Debug */,
+				0B48D41A834D6B2E4EE254DED520099B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99C581A98FC0CF53FABD84823AFEEB0E /* Build configuration list for PBXNativeTarget "TZImagePickerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				687AD918AC56FD22EC1285E98BAC9085 /* Debug */,
+				D54262B484F177B88A261BB0BFB65A81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  WGRichTextEditor
+//
+//  Created by 胡文广 on 2019/9/9.
+//  Copyright © 2019 wenguang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define COLOR(r,g,b,a) ([UIColor colorWithRed:(float)r/255.f green:(float)g/255.f blue:(float)b/255.f alpha:a])
+
+//#import "UIWebView+KWWebViewJSTool.h"
+//#import "UIWebView+KWHideAccessoryView.h"
+//#import "KWEditorBar.h"
+//#import "KWFontStyleBar.h"
+//#import "WGUploadPictureModel.h"
+
+
+#import "RichEditor.h"
+
+//依赖库
+#import "Masonry.h"
+#import <SVProgressHUD.h>
+#endif /* PrefixHeader_pch */
