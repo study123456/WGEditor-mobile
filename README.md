@@ -7,7 +7,7 @@
 
 一、Installation 安装
 
-#import "WGCommon.h"
+#import "RichEditor.h"
 
 二、Example 例子
 
