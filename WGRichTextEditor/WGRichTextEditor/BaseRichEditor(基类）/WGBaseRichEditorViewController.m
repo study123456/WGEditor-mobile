@@ -17,16 +17,21 @@
 @interface WGBaseRichEditorViewController ()
 <
 WKNavigationDelegate,
+WKUIDelegate,
 WGEditorToolBarDelegate,
 WGFontStyleBarDelegate,
 CustomIOSAlertViewDelegate
 >
-
+{
+    
+    NSMutableArray *_uploadImages;
+}
 @property (nonatomic,strong) CustomIOSAlertView *alertView;
 @property (nonatomic,strong) WGInputAlertView *inputAlertView;
 @property (nonatomic,strong) WGFontStyleBar *fontBar;
 @property (nonatomic,strong) TZImagePickerController *imagePickerVc;
 @property (nonatomic,strong) NSMutableArray <WGUploadFileModel*>*uploadArr;
+@property (nonatomic,assign) CGFloat lastPostion;
 @end
 
 @implementation WGBaseRichEditorViewController
@@ -59,6 +64,7 @@ CustomIOSAlertViewDelegate
     NSString * htmlCont = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:self.webHTML ofType:nil] encoding:NSUTF8StringEncoding error:nil];
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
+    self.webView.navigationDelegate = self;
     [self.webView loadHTMLString:htmlCont baseURL:baseURL];
     
     UIBarButtonItem *itemL = [[UIBarButtonItem alloc] initWithTitle:@"Title" style:UIBarButtonItemStylePlain target:self action:@selector(getTitle)];
@@ -173,11 +179,16 @@ CustomIOSAlertViewDelegate
     [self fontBarUpdateWithString:urlString];
     [self handleEvent:urlString];
     [self handleWithString:urlString];
+    
+    
     WEAKSELF
     [webView getCaretYPositionPositionHandleCallback:^(id  _Nullable obj, NSError * _Nullable error) {
-        CGFloat currentPos = [obj floatValue];
-        if (currentPos  > WG_SCREEN_HEIGHT - weakSelf.keboardHeight - 49) {
-            [weakSelf.webView autoScrollTop:currentPos+weakSelf.toolBar.height];
+       CGFloat currentPos = [obj floatValue];
+        if (_lastPostion != currentPos) {
+            _lastPostion = currentPos;
+            if (currentPos  > WG_SCREEN_HEIGHT - weakSelf.keboardHeight - 49) {
+                [weakSelf.webView autoScrollTop:currentPos+weakSelf.toolBar.height];
+            }
         }
     }];
     decisionHandler(WKNavigationActionPolicyAllow); // 必须实现 加载
@@ -230,7 +241,7 @@ CustomIOSAlertViewDelegate
                     //正在上传
                     [weakSelf.webView insetImageKey:fileM.key progress:percent];
                 }else{
-                    
+                    [weakSelf.webView setupContentDisable:true];
                     if (obj) {
                         //上传成功
                         fileM.state = WGUploadFileStateSuccess;
@@ -434,7 +445,7 @@ CustomIOSAlertViewDelegate
     self.imagePickerVc.allowPickingVideo = NO;
     WEAKSELF
     [self.imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-       
+        
         for (UIImage *selImg in photos) {
             WGUploadFileModel *fileM = [WGUploadFileModel new];
             fileM.fileData = UIImageJPEGRepresentation(selImg,0.8f);
@@ -451,7 +462,7 @@ CustomIOSAlertViewDelegate
                 //正在上传
                 [weakSelf.webView insetImageKey:fileM.key progress:percent];
             }else{
-                
+                [weakSelf.webView setupContentDisable:true];
 //                if (obj) {
 //                    //上传成功
 //                    fileM.state = WGUploadFileStateSuccess;

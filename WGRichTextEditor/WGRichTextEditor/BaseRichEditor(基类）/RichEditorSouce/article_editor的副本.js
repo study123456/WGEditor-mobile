@@ -438,8 +438,9 @@ RE.enabledEditingItems = function() {
 
     if (items.length > 0) {
         window.location.href = "re-state-content://" + encodeURI(items.join(','));
+        window.location.href = "re-state-content://" + encodeURI(items.join(','));
     } else {
-        window.location.href = "re-state-content://scrol";
+        window.location.href = "re-state-content://";
     }
 }
 
@@ -554,7 +555,6 @@ RE.insertImageBase64String = function(imageData,imgId) {
         $("#"+imgId).html(imgStr);
         $("#"+imgId+" .reload-btn").hide();
     }
-    
     RE.enabledEditingItems();
     
     var flag = false;
@@ -562,7 +562,7 @@ RE.insertImageBase64String = function(imageData,imgId) {
                             flag = true;
                             setTimeout(function(){
                                        flag = false;
-                                       }, 150);
+                                       }, 50);
                             });
     $("#"+imgId).on("touchend",function(event){
                     if(flag==true){
@@ -591,7 +591,7 @@ RE.insertSuccessReplaceImg =function(imgId,imgUrl){
                             flag = true;
                             setTimeout(function(){
                                        flag = false;
-                                       }, 150);
+                                       }, 5000);
                             });
     $("#"+imgId+"-img").on("touchend",function(event){
                            if(flag==true){
@@ -615,7 +615,7 @@ RE.uploadError = function(imgId){
                             flag = true;
                             setTimeout(function(){
                                        flag = false;
-                                       }, 150);
+                                       }, 50);
                             });
     $("#"+imgId).on("touchend",function(event){
                     if(flag==true){
