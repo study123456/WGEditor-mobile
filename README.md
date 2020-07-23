@@ -74,8 +74,6 @@ https://github.com/study123456/WGEditor-mobile/blob/master/design_up.png
 3、易集成 封装基类
 
 常见问题
-
-Q:自动换行问题
-A:音视频排期中
+音视频排期中
 
 
